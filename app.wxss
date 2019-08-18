@@ -1,0 +1,11 @@
+/**app.wxss**/
+/* 绿色：#29833c */
+page {
+  font-size: 24rpx;
+}
+input {
+  border: 1rpx solid #818181;
+}
+button {
+  border: none;
+}
