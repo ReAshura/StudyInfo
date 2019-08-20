@@ -13,30 +13,35 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "tabBar":{
-    "color":"#8b8b8b",
-    "selectedColor":"#29833c",
-    "backgroundColor":"#fff",
-    "list":[{
-      "pagePath":"pages/student/index/index",
-      "text":"首页",
-      "iconPath":"images/blur_index.png",
-      "selectedIconPath":"images/focus_index.png"
-    },{
-      "pagePath": "pages/student/videobox/videobox",
-      "text": "视频教材",
-      "iconPath": "images/blur_video.png",
-      "selectedIconPath": "images/focus_video.png"
-    },{
-      "pagePath": "pages/student/wordbox/wordbox",
-      "text": "文字教材",
-      "iconPath": "images/blur_font.png",
-      "selectedIconPath": "images/focus_font.png"
-    },{
-      "pagePath": "pages/student/mybox/mybox",
-      "text": "我的",
-      "iconPath": "images/blur_me.png",
-      "selectedIconPath": "images/focus_me.png"
-    }]
+  "tabBar": {
+    "color": "#8b8b8b",
+    "selectedColor": "#29833c",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/student/index/index",
+        "text": "首页",
+        "iconPath": "images/blur_index.png",
+        "selectedIconPath": "images/focus_index.png"
+      },
+      {
+        "pagePath": "pages/student/videobox/videobox",
+        "text": "视频教材",
+        "iconPath": "images/blur_video.png",
+        "selectedIconPath": "images/focus_video.png"
+      },
+      {
+        "pagePath": "pages/student/wordbox/wordbox",
+        "text": "文字教材",
+        "iconPath": "images/blur_font.png",
+        "selectedIconPath": "images/focus_font.png"
+      },
+      {
+        "pagePath": "pages/student/mybox/mybox",
+        "text": "我的",
+        "iconPath": "images/blur_me.png",
+        "selectedIconPath": "images/focus_me.png"
+      }
+    ]
   }
 }
