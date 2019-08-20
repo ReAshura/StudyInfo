@@ -8,7 +8,18 @@ Page({
   onLoad: function (options) {
     
   },
-
+  //登录判断
+  loginFN(){
+    if (this.data.type){
+      wx.switchTab({
+        url: '/pages/student/index/index'
+      })
+    }else{
+      wx.reLaunch({
+        url: '/pages/teacher/index/index'
+      })
+    }
+  },
   // 学生与老师之间的切换按钮
   cutFN(){
     this.setData({

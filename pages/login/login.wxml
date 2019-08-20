@@ -17,7 +17,7 @@ wx:else
     <view class="inputbox">
       <input placeholder="请输入您的密码"></input>
     </view>
-    <button>授权并登录</button>
+    <button bindtap="loginFN">授权并登录</button>
   </view>
 
   <button class="teacherBtn" bindtap="cutFN">
