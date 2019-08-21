@@ -1,2 +1,99 @@
 <!--pages/student/index/index.wxml-->
-<view>首页</view>
+<view class="searchbox">
+  <input placeholder="请输入要查找的内容" placeholder-class="placeColor"></input>
+</view>
+<swiper 
+  indicator-dots="{{true}}" 
+  indicator-color="#3c2940" 
+  indicator-active-color="#fff"
+  autoplay="{{true}}"
+  interval="{{3000}}"
+  class="bannerbox">
+  <swiper-item>
+    <view>
+      <image src="/images/banner.png"></image>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view>
+      <image src="/images/banner.png"></image>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="navbox">
+  <view class="nav_item">
+    <image src="/images/videoIcon.svg" mode="widthFix"></image>
+    <text>视频教材</text>
+  </view>
+  <view class="nav_item">
+    <image src="/images/bookIcon.svg" mode="widthFix"></image>
+    <text>文字教材</text>
+  </view>
+  <view class="nav_item">
+    <image src="/images/jifenIcon.svg" mode="widthFix"></image>
+    <text>我的积分</text>
+  </view>
+</view>
+
+<view class="line"></view>
+
+<view class="listbox">
+  <view class="listhead">
+    <view class="listtitle">
+      <text class="comlus"></text>
+      <view class="listtext">视频教材</view>
+    </view>
+    <view class="listnext">
+      查看全部 <text class="iconfont run"></text>
+    </view>
+  </view>
+  <view class="list_cont">
+    <view class="list_item">
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button>未完成</button>
+        </view>
+      </view>
+    </view>
+
+    <view class="list_item">
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button>未完成</button>
+        </view>
+      </view>
+    </view>
+
+    <view class="list_item">
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button>未完成</button>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+</view>
