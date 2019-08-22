@@ -1,4 +1,7 @@
 {
-  "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "swiperbox":"/components/swiperbox/swiperbox",
+    "video-item": "/components/video-item/video-item",
+    "word-item": "/components/word-item/word-item"
+  }
 }

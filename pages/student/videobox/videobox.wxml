@@ -1,2 +1,6 @@
 <!--pages/student/videobox/videobox.wxml-->
-<view>视频教材页面</view>
+<view class="searchbox">
+  <input placeholder="请输入要查找的内容" placeholder-class="placeColor"></input>
+</view>
+
+<video-item></video-item>

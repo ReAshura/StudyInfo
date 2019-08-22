@@ -1,0 +1,19 @@
+<!--pages/components/swiperbox/swiperbox.wxml-->
+<swiper 
+  indicator-dots="{{true}}" 
+  indicator-color="#3c2940" 
+  indicator-active-color="#fff"
+  autoplay="{{true}}"
+  interval="{{3000}}"
+  class="bannerbox">
+  <swiper-item>
+    <view>
+      <image src="/images/banner.png"></image>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view>
+      <image src="/images/banner.png"></image>
+    </view>
+  </swiper-item>
+</swiper>
