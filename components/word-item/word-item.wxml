@@ -1,0 +1,52 @@
+<!--components/word-item/word-item.wxml-->
+<view class="listbox">
+  <view class="listhead">
+    <view class="listtitle">
+      <text class="comlus"></text>
+      <view class="listtext">文字教材</view>
+    </view>
+    <view class="listnext" wx:if="{{runAllList}}">
+      查看全部 <text class="iconfont run"></text>
+    </view>
+  </view>
+  
+  <view class="list_cont">
+
+    <view class="list_item crearcolumn">
+      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
+      <view class="word_bottom">
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon_left">
+          <image src="/images/money.svg"></image>
+          <text>20 分</text>
+        </view>
+        <button>未完成</button>
+      </view>
+    </view>
+
+    <view class="list_item crearcolumn">
+      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
+      <view class="word_bottom">
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon_left">
+          <image src="/images/money.svg"></image>
+          <text>20 分</text>
+        </view>
+        <button>未完成</button>
+      </view>
+    </view>
+
+    <view class="list_item crearcolumn">
+      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
+      <view class="word_bottom">
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon_left">
+          <image src="/images/money.svg"></image>
+          <text>20 分</text>
+        </view>
+        <button>未完成</button>
+      </view>
+    </view>
+  
+  </view>
+</view>

@@ -25,5 +25,5 @@ Page({
     this.setData({
       type:this.data.type?0:1
     })
-  }
+  },
 })

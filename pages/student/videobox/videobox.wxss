@@ -1,1 +1,15 @@
 /* pages/student/videobox/videobox.wxss */
+@import '../../../utils/iconfont.wxss';
+.searchbox {
+  padding: 0 32rpx;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 22rpx;
+}
+.searchbox>input {
+  background-color: #f6f6f6;
+  border-radius: 50rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: none;
+}

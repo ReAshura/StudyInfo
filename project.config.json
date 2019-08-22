@@ -40,12 +40,34 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
 					"name": "学生首页",
 					"pathName": "pages/student/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "视频教材",
+					"pathName": "pages/student/videobox/videobox",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "文字教材",
+					"pathName": "pages/student/wordbox/wordbox",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "个人中心",
+					"pathName": "pages/student/mybox/mybox",
+					"query": "",
 					"scene": null
 				}
 			]

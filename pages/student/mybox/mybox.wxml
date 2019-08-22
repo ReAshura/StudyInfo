@@ -1,2 +1,32 @@
 <!--pages/student/mybox/mybox.wxml-->
-<view>我的个人中心</view>
+<view class="myheadbox">
+  <view class="myimgbox">
+    <image src="/images/banner.png"></image>
+    <view>张三</view>
+  </view>
+  <view class="myxuehao">学号:12345678</view>
+</view>
+
+<view class="integralbox">
+  <view class="integ_left">
+    <image src="/images/money.svg"></image>
+    <view>8000  积分</view>
+  </view>
+  <button>积分记录</button>
+</view>
+
+<view class="next_item">
+  <view class="next_left">
+    <image src="/images/floderIcon.svg"></image>
+    <view>基本资料</view>
+  </view>
+  <text class="iconfont nexticon"></text>
+</view>
+
+<view class="next_item">
+  <view class="next_left">
+    <image src="/images/jifenIcon.svg"></image>
+    <view>已完成教材</view>
+  </view>
+  <text class="iconfont nexticon"></text>
+</view>

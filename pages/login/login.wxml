@@ -1,8 +1,6 @@
 <!--index.wxml-->
 <view class="content">
-  <image src="https://www.ttnav.com/storage/topimg/20190818/BTXJtSzhFHMmtXjqe8jbZBjdb4aQRWjEIa6hWU84.png" mode="scaleToFill" 
- wx:if="{{type}}"
-  ></image>
+  <image src="/images/stbg.jpg" mode="scaleToFill" wx:if="{{type}}"></image>
   <image src="https://www.ttnav.com/storage/topimg/20190818/Y7f6zTNH3YnWgIWD46TbEpgcZyF6ijWilxfd8PCy.png" mode="scaleToFill" 
 wx:else
   ></image>

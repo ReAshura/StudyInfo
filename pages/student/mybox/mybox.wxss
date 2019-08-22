@@ -1,1 +1,84 @@
 /* pages/student/mybox/mybox.wxss */
+@import '../../../utils/iconfont.wxss';
+.myheadbox {
+  background-color: #fcf6cd;
+  padding: 42rpx 52rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.myimgbox {
+  display: flex;
+  font-size: 42rpx;
+  align-items: center;
+}
+.myimgbox>image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.myimgbox>view{
+  margin-left: 42rpx;
+}
+.myxuehao {
+  font-size: 28rpx;
+  color: #363636;
+}
+.integralbox {
+  padding: 28rpx 52rpx 22rpx 82rpx;
+  box-sizing: border-box;
+  background-color: #f2d300;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.integ_left {
+  display: flex;
+  align-items: center;
+}
+.integ_left>image {
+  width: 72rpx;
+  height: 72rpx;
+}
+.integ_left>view {
+  margin-left: 42rpx;
+  font-size: 34rpx;
+}
+.integralbox>button {
+  margin: 0;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+  border: none;
+  width: 220rpx;
+}
+.next_item {
+  padding: 32rpx 66rpx 32rpx 36rpx;
+  border-bottom: 1rpx solid #c1c1c1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.next_item:last-child{
+  border-color: #c1c1c1;
+}
+.next_left {
+  display: flex;
+  align-items: center;
+}
+.next_left>image{
+  width: 62rpx;
+  height: 62rpx;
+
+}
+.next_left>view{
+  font-size: 30rpx;
+  margin-left: 32rpx;
+}
+.nexticon::after {
+  font-size: 52rpx;
+  content: '\e621';
+  color: #8b8b8b;
+}

@@ -43,5 +43,6 @@
         "selectedIconPath": "images/focus_me.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap4.json"
 }
