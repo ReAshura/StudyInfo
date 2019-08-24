@@ -6,14 +6,14 @@
 <swiperbox></swiperbox>
 
 <view class="navbox">
-  <view class="nav_item">
+  <navigator class="nav_item" url="../videobox/videobox" open-type="switchTab">
     <image src="/images/videoIcon.svg" mode="widthFix"></image>
     <text>视频教材</text>
-  </view>
-  <view class="nav_item">
+  </navigator>
+  <navigator class="nav_item" url="../wordbox/wordbox" open-type="switchTab">
     <image src="/images/bookIcon.svg" mode="widthFix"></image>
     <text>文字教材</text>
-  </view>
+  </navigator>
   <view class="nav_item">
     <image src="/images/jifenIcon.svg" mode="widthFix"></image>
     <text>我的积分</text>
@@ -22,9 +22,10 @@
 
 <view class="line"></view>
 
-<video-item runAllList="{{true}}"></video-item>
+<video-item runAllList="{{true}}" titleShow="{{true}}"></video-item>
 
 
 <view class="line"></view>
 
-<word-item runAllList="{{true}}"></word-item>
+
+<word-item runAllList="{{true}}" titleShow="{{true}}"></word-item>

@@ -3,8 +3,12 @@
     "pages/login/login",
     "pages/student/index/index",
     "pages/student/mybox/mybox",
+    "pages/student/progresinfo/progresinfo",
+    "pages/student/myinfo/myinfo",
     "pages/student/videobox/videobox",
     "pages/student/wordbox/wordbox",
+    "pages/videoDetail/videoDetail",
+    "pages/wordDetail/wordDetail",
     "pages/teacher/index/index"
   ],
   "window": {

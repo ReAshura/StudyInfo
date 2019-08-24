@@ -1,0 +1,60 @@
+/* pages/student/myinfo/myinfo.wxss */
+.myheadbox {
+  /* background-color: #fcf6cd; */
+  padding: 42rpx 52rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #cdcdcd;
+}
+.myimgbox {
+  display: flex;
+  font-size: 42rpx;
+  align-items: center;
+}
+.myimgbox>image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.myimgbox>view{
+  margin-left: 42rpx;
+}
+.info_item {
+  border-bottom: 1rpx solid #cdcdcd;
+  padding: 22rpx 42rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info_item:last-child {
+  border: none;
+}
+.item_text {
+  width: 28%;
+}
+.item_input {
+  width: 72%;
+  position: relative;
+}
+.item_input input {
+  height: 68rpx;
+  line-height: 68rpx;
+  border-color: #c2c2c2;  
+}
+.inputOff {
+  background-color: #e5e5e5;
+}
+.subBtn {
+  padding: 22rpx 42rpx;
+  box-sizing: border-box;
+}
+.subBtn>button {
+  background-color: #29833c;
+  color: #fff;
+  border: none;
+  font-size: 30rpx;
+  margin-top: 160rpx;
+}

@@ -1,0 +1,36 @@
+<!--pages/student/myinfo/myinfo.wxml-->
+<view class="myheadbox">
+  <view class="myxuehao">更改头像</view>
+  <view class="myimgbox">
+    <image src="/images/banner.png"></image>
+    <view>张三</view>
+  </view>
+</view>
+
+<view class="info_item">
+  <view class="item_text">姓名</view>
+  <view class="item_input">
+    <input></input>
+  </view>
+</view>
+
+<view class="info_item">
+  <view class="item_text">性别</view>
+  <view class="item_input">
+    <picker mode="selector" range="{{gender}}" range-key="name" value="{{genderxb}}" bindchange="genderFN">
+      <input value="{{gender[genderxb].name}}" disabled="disabled"></input>
+    </picker>
+  </view>
+</view>
+
+<view class="info_item">
+  <view class="item_text">学号</view>
+  <view class="item_input">
+    <input disabled="disabled" class="inputOff"></input>
+  </view>
+</view>
+
+<view class="subBtn">
+  <button>保存</button>
+</view>
+

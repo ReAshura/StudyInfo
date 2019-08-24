@@ -1,0 +1,12 @@
+<!--pages/student/progresinfo/progresinfo.wxml-->
+<view class="nav_select">
+  <view class="{{type?'active':''}}" data-id="1" bindtap="selectFN">视频教材</view>
+  <view class="{{!type?'active':''}}" data-id="0" bindtap="selectFN">文字教材</view>
+</view>
+
+<block wx:if="{{type}}">
+  <video-item></video-item>
+</block>
+<block wx:else>
+  <word-item></word-item>
+</block>

@@ -5,6 +5,8 @@ page {
 }
 input {
   border: 1rpx solid #818181;
+  padding: 0 22rpx;
+  box-sizing: border-box;
 }
 button {
   border: none;

@@ -1,6 +1,6 @@
 <!--components/word-item/word-item.wxml-->
 <view class="listbox">
-  <view class="listhead">
+  <view class="listhead" wx:if="{{titleShow}}">
     <view class="listtitle">
       <text class="comlus"></text>
       <view class="listtext">文字教材</view>
@@ -11,8 +11,22 @@
   </view>
   
   <view class="list_cont">
+    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
+      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
+      <view class="word_bottom">
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon_left">
+          <image src="/images/money.svg"></image>
+          <text>20 分</text>
+        </view>
+        <button> 
+          <text class="iconfont hostIcon"></text>
+          未完成
+        </button>
+      </view>
+    </navigator>
 
-    <view class="list_item crearcolumn">
+    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
       <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
       <view class="word_bottom">
         <view class="item_time">2019.03.11 布置</view>
@@ -22,9 +36,9 @@
         </view>
         <button>未完成</button>
       </view>
-    </view>
+    </navigator>
 
-    <view class="list_item crearcolumn">
+    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
       <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
       <view class="word_bottom">
         <view class="item_time">2019.03.11 布置</view>
@@ -34,19 +48,7 @@
         </view>
         <button>未完成</button>
       </view>
-    </view>
-
-    <view class="list_item crearcolumn">
-      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
-      <view class="word_bottom">
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon_left">
-          <image src="/images/money.svg"></image>
-          <text>20 分</text>
-        </view>
-        <button>未完成</button>
-      </view>
-    </view>
+    </navigator>
   
   </view>
 </view>
