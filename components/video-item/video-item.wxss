@@ -81,7 +81,8 @@
   margin-left: 8rpx;
 }
 .item_icon>button {
-  width: 160rpx;
+  margin: 0;
+  width: 200rpx;
   height: 58rpx;
   line-height: 57rpx;
   color: #fff;
@@ -89,3 +90,8 @@
   background-color: #29833c;
   margin-left: 12rpx;
 }
+.hostIcon::after {
+  content: '\e628';
+  color: #fff;
+}
+

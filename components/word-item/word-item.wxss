@@ -87,11 +87,16 @@
   margin-left: 8rpx;
 }
 .word_bottom>button {
-  width: 160rpx;
+  margin: 0;
+  width: 200rpx;
   height: 58rpx;
   line-height: 57rpx;
   color: #fff;
   font-size: 26rpx;
   background-color: #29833c;
-  margin: 0;
+  margin-left: 12rpx;
+}
+.hostIcon::after {
+  content: '\e628';
+  color: #fff;
 }

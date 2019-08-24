@@ -7,6 +7,10 @@ Component({
     runAllList: {
       type: Boolean,
       value: false
+    },
+    titleShow: {
+      type: Boolean,
+      value: false
     }
   },
 

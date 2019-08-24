@@ -1,0 +1,25 @@
+<!--pages/wordDetail/wordDetail.wxml-->
+<view class="contentbox">
+  <view class="title">进入东南大学注意事项</view>
+  <view class="timebox">2019.03.11 布置</view>
+  <view class="scoresbox">
+    <view class="score_left">
+      <image src="/images/money.svg"></image>
+      <text>20 分</text>
+    </view>
+    <button> 
+      <text class="iconfont hostIcon"></text>
+      未完成
+    </button>
+  </view>
+</view>
+
+<view class="student contentbox">
+  <image src="/images/test_wordBj.png"></image>
+  <view>
+    刘洪在仪式中致辞，他说，一直以来，井冈山十分重视和珍惜与东南大学的合作，双方在项目合作等方面取得积极成效，此次在决战脱贫攻坚、决胜全面小康的关键时期，双方签订校地战略合作，充分发挥东南大学雄厚的人才资源和丰硕的教研成果等优势，在共建基地、培育人才、乡村振兴等方面携手合作，这对井冈山来说是恰逢所需、正当其时，必将为井冈山高质量跨越发展提供坚实智力支撑、注入不竭动力。刘洪表示，将竭尽全力为东南大学的领导和师生提供方便、做好服务，以实际行动保证合作协议落实。
+  </view>
+  <view>
+    刘洪在仪式中致辞，他说，一直以来，井冈山十分重视和珍惜与东南大学的合作，双方在项目合作等方面取得积极成效，此次在决战脱贫攻坚、决胜全面小康的关键时期，双方签订校地战略合作，充分发挥东南大学雄厚的人才资源和丰硕的教研成果等优势，在共建基地、培育人才、乡村振兴等方面携手合作，这对井冈山来说是恰逢所需、正当其时，必将为井冈山高质量跨越发展提供坚实智力支撑、注入不竭动力。刘洪表示，将竭尽全力为东南大学的领导和师生提供方便、做好服务，以实际行动保证合作协议落实。
+  </view>
+</view>
