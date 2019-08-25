@@ -1,10 +1,10 @@
 <!--pages/student/mybox/mybox.wxml-->
 <view class="myheadbox">
   <view class="myimgbox">
-    <image src="/images/banner.png"></image>
-    <view>张三</view>
+    <image src="http://api.govision.cn/uploads/userphoto/{{myInfo.photo}}"></image>
+    <view>{{myInfo.trueName}}</view>
   </view>
-  <view class="myxuehao">学号:12345678</view>
+  <view class="myxuehao">学号:{{myInfo.userName}}</view>
 </view>
 
 <view class="integralbox">
