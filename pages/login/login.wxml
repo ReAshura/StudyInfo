@@ -1,27 +1,30 @@
 <!--index.wxml-->
 <view class="content">
-  <image src="/images/stbg.jpg" mode="scaleToFill" wx:if="{{type}}"></image>
-  <image src="https://www.ttnav.com/storage/topimg/20190818/Y7f6zTNH3YnWgIWD46TbEpgcZyF6ijWilxfd8PCy.png" mode="scaleToFill" 
+  <image src="/images/stbg.jpg" mode="scaleToFill"></image>
+  <!-- <image src="https://www.ttnav.com/storage/topimg/20190818/Y7f6zTNH3YnWgIWD46TbEpgcZyF6ijWilxfd8PCy.png" mode="scaleToFill" 
 wx:else
-  ></image>
+  ></image> -->
   <view class="loginbox">
     <view class="h1">
-      <text wx:if="{{type}}">登录</text>
-      <text wx:else>指导老师登录</text>
+      <text>登录</text>
+      <!-- <text wx:if="{{type}}">登录</text>
+      <text wx:else>指导老师登录</text> -->
     </view>
     <view class="inputbox">
-      <input placeholder="请输入您的学号"></input>
+      <text class="iconfont serIcon"></text>
+      <input placeholder="请输入您的账号" bindinput="setinput" data-id="username"></input>
     </view>
     <view class="inputbox">
-      <input placeholder="请输入您的密码"></input>
+      <text class="iconfont passIcon"></text>
+      <input placeholder="请输入您的密码" bindinput="setinput" data-id="password" password="true"></input>
     </view>
-    <button bindtap="loginFN">授权并登录</button>
+    <button bindtap="loginFN">登录</button>
   </view>
 
-  <button class="teacherBtn" bindtap="cutFN">
+  <!-- <button class="teacherBtn" bindtap="cutFN">
     <text wx:if="{{type}}">指导老师登录</text>
-    <text wx:else>学生登录</text>
-  </button>
+    <text wx:else>登录</text>
+  </button> -->
 
   <view class="identification">Copyright © Southeast University</view>
 </view>

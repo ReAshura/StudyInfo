@@ -1,39 +1,15 @@
 //app.js "sitemapLocation": "sitemap.json"
+require('./Mixins.js')
 App({
   onLaunch: function () {
 
-    // 登录
-    // wx.login({
-    //   success: res => {
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-    //   }
-    // })
-    // 获取用户信息
-    // wx.getSetting({
-    //   success: res => {
-    //     if (res.authSetting['scope.userInfo']) {
-    //     }else{
-    //     }
-    //   }
-    // })
-
-
-    // wx.getUserInfo({
-    //   success: res => {
-    //     // 可以将 res 发送给后台解码出 unionId
-    //     this.globalData.userInfo = res.userInfo
-    //     // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //     // 所以此处加入 callback 以防止这种情况
-    //     if (this.userInfoReadyCallback) {
-    //       this.userInfoReadyCallback(res)
-    //     }
-    //   }
-    // })
   },
   globalData: {
-    userInfo: null,
+    userInfo: {}, // 用户信息
     header: {'content-type': 'application/json'},
-    URL:'https:www.baidu.com',
+    URL:'http://api.govision.cn/xuegong/v1',
+    userName:'',// 用户账号
+    password:'',// 用户密码
   },
   // 封装 alert 弹出框
   wxAlert(str){
@@ -46,17 +22,24 @@ App({
     })
   },
   // 封装请求
-  wxAjax(url, method="GET",data = {}, header = this.globalData.header){
+  wxAjax(url, data = {}, method="GET", header = this.globalData.header){
+    wx.showLoading({ title: '拼命加载中....' })
     return new Promise((resolve,reject)=>{
       wx.request({
-        url: this.globalData.URL,
-        method,
+        url: this.globalData.URL + url,
         data,
+        method,
         header,
-        success(res) {
-          resolve(res.data)
+        success: (res) => {
+          wx.hideLoading();
+          if (res.data.result){
+            resolve(res.data)
+          } else {
+            this.wxAlert(res.data.message)
+          }
         },
         fail(e){
+          wx.hideLoading();
           this.wxAlert('请求出错')
         }
       })
