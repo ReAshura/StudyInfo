@@ -1,0 +1,97 @@
+/* components/teacher-video/teacher-video.wxss */
+@import '../../utils/iconfont.wxss';
+.listbox {
+  overflow: hidden;
+}
+.listhead {
+  margin-top: 48rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 38rpx;
+  box-sizing: border-box;
+  align-items: flex-end;
+}
+.comlus{
+  height: 58rpx;
+  width: 12rpx;
+  background-color: #29833c;
+  border-radius: 12rpx;
+}
+.listtext {
+  margin-left: 28rpx;
+  font-size: 38rpx;
+}
+.listtitle {
+  display: flex;
+  align-items: center;
+}
+.run::after {
+  content: '\e621';
+  font-size: 26rpx;
+}
+.listnext {
+  color: #adb0b3;
+}
+.list_cont {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+.list_item {
+  padding: 42rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  border-bottom: 1rpx solid #d7d7d7;
+}
+.list_item:last-child{
+  border:none;
+}
+.list_item>image {
+  height: 150rpx;
+  width: 226rpx;
+  border-radius: 8rpx;
+}
+.listright {
+  margin-left: 26rpx;
+}
+.item_title {
+  font-size: 28rpx;
+}
+.item_time {
+  margin:12rpx 0;
+  font-size: 24rpx;
+  color: #adadad;
+}
+.item_icon {
+  display: flex;
+  justify-content: space-between;
+}
+.item_icon_left {
+  display: flex;
+  align-items: center;
+  width: 220rpx;
+}
+.item_icon_left>image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.item_icon_left>text {
+  color: #d72020;
+  font-size: 26rpx;
+  margin-left: 8rpx;
+}
+.item_icon>button {
+  margin: 0;
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 57rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #29833c;
+  margin-left: 12rpx;
+}
+.hostIcon::after {
+  content: '\e628';
+  color: #fff;
+}
+

@@ -1,1 +1,78 @@
 /* pages/teacher/index/index.wxss */
+@import '../../../utils/iconfont.wxss';
+.header {
+  display: flex;
+  background-color: #f3f1e3;
+  padding: 22rpx 40rpx;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 32rpx;
+}
+.head_left {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.head_left>image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.head_left>view{
+  margin-left: 42rpx;
+}
+.head_left>text {
+  margin-left: 20rpx;
+}
+.navbox {
+  padding: 70rpx 58rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+.nav_item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+
+}
+.nav_item>view {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+}
+.nav_item>text {
+  margin-top: 22rpx;
+}
+.item_blue {
+  background-color: #2497f0;
+}
+.item_blue>.iconfont::after {
+  content: '\e62f';
+  font-size: 58rpx;
+}
+.item_green {
+  background-color: #2ac874;
+}
+.item_green>.iconfont::after {
+  content: '\e607';
+  font-size: 58rpx;
+}
+.item_orange {
+  background-color: #ef681f;
+}
+.item_orange>.iconfont::after {
+  content: '\e601';
+  font-size: 58rpx;
+}
+.line {
+  background-color: #ececec;
+  height: 22rpx;
+}
