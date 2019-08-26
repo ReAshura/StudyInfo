@@ -1,2 +1,42 @@
 <!--pages/teacher/index/index.wxml-->
-<view>hello，我是老师的登录的详情页面</view>
+<view class='header'>
+  <view class='head_left'>
+    <image src='/images/banner.png'></image>
+    <view>李四</view>
+    <text>老师</text>
+  </view>
+  <view>2019年10月1日</view>
+</view>
+
+<view class='navbox'>
+  <view class='nav_item'>
+    <view class='item_blue'>
+      <text class='iconfont'></text>
+    </view>
+    <text>发布任务</text>
+  </view>
+  <view class='nav_item'>
+    <view class='item_green'>
+      <text class='iconfont'></text>
+    </view>
+    <text>发布任务</text>
+  </view>
+  <view class='nav_item'>
+    <view class='item_orange'>
+      <text class='iconfont'></text>
+    </view>
+    <text>发布任务</text>
+  </view>
+</view>
+
+<view class="line"></view>
+
+<video-item runAllList="{{true}}" titleShow="{{true}}"></video-item>
+
+<view class="line"></view>
+
+<word-item runAllList="{{true}}" titleShow="{{true}}"></word-item>
+
+<view class="line"></view>
+
+<done-student runAllList="{{true}}" titleShow="{{true}}"></done-student>

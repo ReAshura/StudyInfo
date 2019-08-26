@@ -1,0 +1,70 @@
+<view class="listbox">
+  <view class="listhead" wx:if="{{titleShow}}">
+    <view class="listtitle">
+      <text class="comlus"></text>
+      <view class="listtext">视频教材</view>
+    </view>
+    <view class="listnext" wx:if="{{runAllList}}">
+      查看全部
+      <text class="iconfont run"></text>
+    </view>
+  </view>
+
+  <view class="list_cont">
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button> 
+            <text class="iconfont hostIcon"></text>
+            未完成
+          </button>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button> 
+            <text class="iconfont hostIcon"></text>
+            未完成
+          </button>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button> 
+            <text class="iconfont hostIcon"></text>
+            未完成
+          </button>
+        </view>
+      </view>
+    </navigator>
+
+
+  </view>
+</view>

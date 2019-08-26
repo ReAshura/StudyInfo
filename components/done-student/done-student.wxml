@@ -1,0 +1,47 @@
+<!--components/done-student/done-student.wxml-->
+<!--components/vedio-item/vedio-item.wxml-->
+<view class="listbox">
+  <view class="listhead" wx:if="{{titleShow}}">
+    <view class="listtitle">
+      <text class="comlus"></text>
+      <view class="listtext">最近完成任务的学生</view>
+    </view>
+    <view class="listnext" wx:if="{{runAllList}}">
+      查看全部
+      <text class="iconfont run"></text>
+    </view>
+  </view>
+
+  <view class="list_cont">
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <view class='item_left'>
+        <image src='/images/banner.png'></image>
+        <view>张三</view>
+      </view>
+      <view class='item_right'>
+        东南大学在井冈山大仓村建立大学生社会实践
+      </view>
+    </navigator>
+
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <view class='item_left'>
+        <image src='/images/banner.png'></image>
+        <view>张三</view>
+      </view>
+      <view class='item_right'>
+        东南大学在井冈山大仓村建立大学生社会实践
+      </view>
+    </navigator>
+
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <view class='item_left'>
+        <image src='/images/banner.png'></image>
+        <view>张三</view>
+      </view>
+      <view class='item_right'>
+        东南大学在井冈山大仓村建立大学生社会实践
+      </view>
+    </navigator>
+
+  </view>
+</view>

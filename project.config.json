@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -104,6 +104,12 @@
 					"name": "任务进度页",
 					"pathName": "pages/student/progresinfo/progresinfo",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "老师的主页面",
+					"pathName": "pages/teacher/index/index",
 					"scene": null
 				}
 			]
