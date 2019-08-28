@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "word-item": "/components/word-item/word-item"
+    "word-item": "/components/word-item/word-item",
+    "search-input": "/components/search-input/search-input"
   }
 }

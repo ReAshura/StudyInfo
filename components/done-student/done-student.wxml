@@ -13,7 +13,7 @@
   </view>
 
   <view class="list_cont">
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail" data-id='1'>
       <view class='item_left'>
         <image src='/images/banner.png'></image>
         <view>张三</view>
@@ -23,7 +23,7 @@
       </view>
     </navigator>
 
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+    <navigator class="list_item" url="/pages/videoDetail/videoDetail" data-id='2'>
       <view class='item_left'>
         <image src='/images/banner.png'></image>
         <view>张三</view>
@@ -33,7 +33,7 @@
       </view>
     </navigator>
 
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+    <view class="list_item" bindtap='test' data-id='3'>
       <view class='item_left'>
         <image src='/images/banner.png'></image>
         <view>张三</view>
@@ -41,7 +41,7 @@
       <view class='item_right'>
         东南大学在井冈山大仓村建立大学生社会实践
       </view>
-    </navigator>
+    </view>
 
   </view>
 </view>

@@ -9,24 +9,24 @@
 </view>
 
 <view class='navbox'>
-  <view class='nav_item'>
+  <navigator url="../taskPush/taskPush" class='nav_item'>
     <view class='item_blue'>
       <text class='iconfont'></text>
     </view>
     <text>发布任务</text>
-  </view>
-  <view class='nav_item'>
+  </navigator>
+  <navigator url="../taskView/taskView" class='nav_item'>
     <view class='item_green'>
       <text class='iconfont'></text>
     </view>
-    <text>发布任务</text>
-  </view>
-  <view class='nav_item'>
+    <text>查看任务</text>
+  </navigator>
+  <navigator url="../myStudent/myStudent" class='nav_item'>
     <view class='item_orange'>
       <text class='iconfont'></text>
     </view>
-    <text>发布任务</text>
-  </view>
+    <text>我的学生</text>
+  </navigator>
 </view>
 
 <view class="line"></view>
@@ -39,4 +39,4 @@
 
 <view class="line"></view>
 
-<done-student runAllList="{{true}}" titleShow="{{true}}"></done-student>
+<done-student runAllList="{{true}}" titleShow="{{true}}" bindmyevent="onMyEvent"></done-student>

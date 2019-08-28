@@ -1,4 +1,4 @@
-//获取应用实例
+//获取应用实例 student1  teacher1
 const app = getApp()
 Page({
   mixins:[require('../../Mixins.js')],
@@ -29,6 +29,7 @@ Page({
         app.wxAlert('暂时仅支持学生和教师入口');
         return false;
       };
+      app.globalData.userType = res.data.userType;
       app.globalData.userInfo = res.data;
       app.globalData.userName = this.data.username;
       app.globalData.password = this.data.password;
