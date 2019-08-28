@@ -5,6 +5,7 @@ App({
 
   },
   globalData: {
+    userType: 2,// 用户状态 2是教师 3是学生 ''是初始状态
     userInfo: {}, // 用户信息
     header: {'content-type': 'application/json'},
     URL:'http://api.govision.cn/xuegong/v1',

@@ -24,6 +24,10 @@ Page({
       // console.log(this.data.courseList)
     })
   },
+  // 监听到点击搜索按钮
+  searchFN(e) {
+    console.log(e.detail.text)
+  },
   // 获取课程详情
   videoDetail(type){
     // 获取视频 

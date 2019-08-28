@@ -1,0 +1,5 @@
+<!--components/search-input/search-input.wxml-->
+<view class="searchbox">
+  <input placeholder="请输入要查找的内容" placeholder-class="placeColor" bindinput='_setText'></input>
+  <text class='iconfont search' bindtap='_searchFN'></text>
+</view>

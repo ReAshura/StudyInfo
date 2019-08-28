@@ -1,7 +1,5 @@
 <!--pages/student/index/index.wxml-->
-<view class="searchbox">
-  <input placeholder="请输入要查找的内容" placeholder-class="placeColor"></input>
-</view>
+<search-input bindmyevent="searchFN"/>
 
 <swiperbox></swiperbox>
 

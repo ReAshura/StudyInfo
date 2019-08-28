@@ -1,3 +1,5 @@
+// pages/teacher/taskView/taskView.js
+const app = getApp();
 Page({
   data: {
     
@@ -5,8 +7,11 @@ Page({
   onLoad: function (options) {
     
   },
-  // 监听到点击搜索按钮
-  searchFN(e) {
-    console.log(e.detail.text)
+  onShow: function () {
+    
   },
+  // 监听到点击搜索按钮
+  searchFN(e){
+    console.log(e.detail.text)
+  }
 })

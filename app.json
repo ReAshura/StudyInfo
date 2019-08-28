@@ -9,7 +9,10 @@
     "pages/student/wordbox/wordbox",
     "pages/videoDetail/videoDetail",
     "pages/wordDetail/wordDetail",
-    "pages/teacher/index/index"
+    "pages/teacher/index/index",
+    "pages/teacher/taskView/taskView",
+    "pages/teacher/taskPush/taskPush",
+    "pages/teacher/myStudent/myStudent"
   ],
   "window": {
     "backgroundTextStyle": "light",
