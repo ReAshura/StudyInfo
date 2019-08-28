@@ -1,11 +1,85 @@
 <!--pages/teacher/myStudent/myStudent.wxml-->
 <view class='header'>
-  <view>学生姓名</view>
-  <view>已完成任务</view>
-  <view>任务完成率</view>
+  <view class='t1'>学生姓名</view>
+  <view class='t2'>已完成任务</view>
+  <view class='t2'>任务完成率</view>
 </view>
 
 <view class='studentList'>
-  <view class='s_item'>
-  </view>
+
+  <navigator class='s_item' url='../seeInfo/seeInfo'>
+    <view class='item_info t1'>
+      <image src='/images/demo.svg'></image>
+      <view>张三</view>
+    </view>
+    <view class='t2'>
+      <text>49</text>
+    </view>
+    <view class='t2'>
+      <text>59%</text>
+    </view>
+    <text class='iconfont runIcons'></text>
+  </navigator>
+
+  <navigator class='s_item' url='../seeInfo/seeInfo'>
+    <view class='item_info t1'>
+      <image src='/images/demo.svg'></image>
+      <view>张三</view>
+    </view>
+    <view class='t2'>
+      <text>49</text>
+    </view>
+    <view class='t2'>
+      <text>59%</text>
+    </view>
+    <text class='iconfont runIcons'></text>
+  </navigator>
+
+  <navigator class='s_item' url='../seeInfo/seeInfo'>
+    <view class='item_info t1'>
+      <image src='/images/demo.svg'></image>
+      <view>张三</view>
+    </view>
+    <view class='t2'>
+      <text>49</text>
+    </view>
+    <view class='t2'>
+      <text>59%</text>
+    </view>
+    <text class='iconfont runIcons'></text>
+  </navigator>
+
+  <navigator class='s_item' url='../seeInfo/seeInfo'>
+    <view class='item_info t1'>
+      <image src='/images/demo.svg'></image>
+      <view>张三</view>
+    </view>
+    <view class='t2'>
+      <text>49</text>
+    </view>
+    <view class='t2'>
+      <text>59%</text>
+    </view>
+    <text class='iconfont runIcons'></text>
+  </navigator>
+
+  <navigator class='s_item' url='../seeInfo/seeInfo'>
+    <view class='item_info t1'>
+      <image src='/images/demo.svg'></image>
+      <view>张三</view>
+    </view>
+    <view class='t2'>
+      <text>49</text>
+    </view>
+    <view class='t2'>
+      <text>59%</text>
+    </view>
+    <text class='iconfont runIcons'></text>
+  </navigator>
+
+
+
+
+
+
 </view>

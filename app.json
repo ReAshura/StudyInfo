@@ -12,7 +12,8 @@
     "pages/teacher/index/index",
     "pages/teacher/taskView/taskView",
     "pages/teacher/taskPush/taskPush",
-    "pages/teacher/myStudent/myStudent"
+    "pages/teacher/myStudent/myStudent",
+    "pages/teacher/seeInfo/seeInfo"
   ],
   "window": {
     "backgroundTextStyle": "light",
