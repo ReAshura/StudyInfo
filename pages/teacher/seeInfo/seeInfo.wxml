@@ -1,0 +1,50 @@
+<!--pages/teacher/seeInfo/seeInfo.wxml-->
+<view class="myheadbox">
+  <view class="myimgbox">
+    <image src="/images/demo.svg"></image>
+    <view>张三</view>
+  </view>
+  <view class="myxuehao">学号:15080930125</view>
+</view>
+
+<view class="integralbox">
+  <view class="integ_left">
+    <image src="/images/money.svg"></image>
+    <view>8000  积分</view>
+  </view>
+</view>
+
+<view class='tagbox'>
+  <view class='tagTop'>
+
+    <view class='tagitem'>
+      <text>自定义标签1</text>
+      <icon type="clear" size="18" color="#ff5a00"/>
+    </view>
+
+    <view class='tagitem'>
+      <text>测试一个超长的标签名字</text>
+      <icon type="clear" size="18" color="#ff5a00"/>
+    </view>
+
+    <view class='tagitem'>
+      <text>标签名可以自己定义</text>
+      <icon type="clear" size="18" color="#ff5a00"/>
+    </view>
+
+  </view>
+  <button>学生标签管理</button>
+</view>
+
+<view class='echartsBox'>
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class='speedBox'>
+  <view class='selectTi'>
+    <view>已完成任务</view>
+    <view>未完成任务</view>
+  </view>
+</view>
+
+

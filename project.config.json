@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -124,6 +124,13 @@
 					"id": -1,
 					"name": "老师中我的学生",
 					"pathName": "pages/teacher/myStudent/myStudent",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "老师查看学生详情",
+					"pathName": "pages/teacher/seeInfo/seeInfo",
 					"scene": null
 				}
 			]
