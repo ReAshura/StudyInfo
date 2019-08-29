@@ -1,0 +1,47 @@
+<!--pages/student/integral/integral.wxml-->
+<view class='listItem listTi'>
+  <view>积分来源</view>
+  <view>积分数量</view>
+</view>
+<view class='listItem'>
+  <view>如何与同学建立关系</view>
+  <view class='listleft'>
+    <image src='/images/money.svg'></image>
+    <text> + 20分</text>
+  </view>
+</view>
+<view class='listItem'>
+  <view>如何与同学建立关系</view>
+  <view class='listleft'>
+    <image src='/images/money.svg'></image>
+    <text> + 20分</text>
+  </view>
+</view>
+<view class='listItem'>
+  <view>如何与同学建立关系</view>
+  <view class='listleft'>
+    <image src='/images/money.svg'></image>
+    <text> + 20分</text>
+  </view>
+</view>
+<view class='listItem'>
+  <view>如何与同学建立关系</view>
+  <view class='listleft'>
+    <image src='/images/money.svg'></image>
+    <text> + 20分</text>
+  </view>
+</view>
+<view class='listItem'>
+  <view>如何与同学建立关系</view>
+  <view class='listleft'>
+    <image src='/images/money.svg'></image>
+    <text> + 20分</text>
+  </view>
+</view>
+<view class='listItem'>
+  <view>如何与同学建立关系</view>
+  <view class='listleft'>
+    <image src='/images/money.svg'></image>
+    <text> + 20分</text>
+  </view>
+</view>

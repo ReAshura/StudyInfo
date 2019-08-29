@@ -1,4 +1,5 @@
 /* pages/teacher/seeInfo/seeInfo.wxss */
+@import '../../../utils/iconfont.wxss';
 .myheadbox {
   background-color: #fcf6cd;
   padding: 42rpx 52rpx;
@@ -105,4 +106,88 @@
   height: 70rpx;
   line-height: 70rpx;
   text-align: center;
+}
+.activ {
+  background-color: #ececec;
+}
+/* 列表 */
+.list_cont {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+
+.list_item {
+  padding: 42rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  border-bottom: 1rpx solid #d7d7d7;
+}
+.list_item:last-child{
+  border:none;
+}
+.list_item>image {
+  height: 150rpx;
+  width: 226rpx;
+  border-radius: 8rpx;
+}
+.listright {
+  margin-left: 26rpx;
+}
+.item_title {
+  font-size: 28rpx;
+}
+.item_time {
+  margin:12rpx 0;
+  font-size: 24rpx;
+  color: #adadad;
+}
+.item_icon {
+  display: flex;
+  justify-content: space-between;
+}
+.item_icon_left {
+  display: flex;
+  align-items: center;
+  width: 220rpx;
+}
+.item_icon_left>image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.item_icon_left>text {
+  color: #d72020;
+  font-size: 26rpx;
+  margin-left: 8rpx;
+}
+.item_icon>button {
+  margin: 0;
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 57rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #29833c;
+  margin-left: 12rpx;
+}
+.hostIcon::after {
+  content: '\e628';
+  color: #fff;
+}
+.crearcolumn{
+  flex-direction: column;
+}
+.word_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.word_bottom>button {
+  margin: 0;
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 57rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #29833c;
+  margin-left: 12rpx;
 }

@@ -7,7 +7,7 @@ Page({
   },
   onLoad: function (options) {
     // 获取学生所学课程列表
-    this.getcourseList();
+    // this.getcourseList();
     
   },
   // 获取学生所学课程列表
@@ -20,7 +20,7 @@ Page({
       this.setData({
         courseList: res.dataList
       })
-      this.videoDetail(1)
+      // this.videoDetail(1)
       // console.log(this.data.courseList)
     })
   },

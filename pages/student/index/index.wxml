@@ -12,10 +12,10 @@
     <image src="/images/bookIcon.svg" mode="widthFix"></image>
     <text>文字教材</text>
   </navigator>
-  <view class="nav_item">
+  <navigator class="nav_item" url="../integral/integral">
     <image src="/images/jifenIcon.svg" mode="widthFix"></image>
     <text>我的积分</text>
-  </view>
+  </navigator>
 </view>
 
 <view class="line"></view>

@@ -13,7 +13,8 @@
     "pages/teacher/taskView/taskView",
     "pages/teacher/taskPush/taskPush",
     "pages/teacher/myStudent/myStudent",
-    "pages/teacher/seeInfo/seeInfo"
+    "pages/teacher/seeInfo/seeInfo",
+    "pages/student/integral/integral"
   ],
   "window": {
     "backgroundTextStyle": "light",
