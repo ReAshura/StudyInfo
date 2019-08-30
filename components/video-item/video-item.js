@@ -25,6 +25,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 点击查看全部
+    _lookAll(){
+      let myEventDetail = {
+        'type': 0
+      }
+      this.triggerEvent('myevent', myEventDetail)
+    }
   }
 })

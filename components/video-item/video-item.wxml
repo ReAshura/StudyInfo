@@ -5,7 +5,7 @@
       <text class="comlus"></text>
       <view class="listtext">视频教材</view>
     </view>
-    <view class="listnext" wx:if="{{runAllList}}">
+    <view class="listnext" wx:if="{{runAllList}}" bindtap='_lookAll'>
       查看全部
       <text class="iconfont run"></text>
     </view>

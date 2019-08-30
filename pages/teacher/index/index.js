@@ -17,7 +17,13 @@ Page({
       console.log(res)
     })
   },
+  // 监听视频点击
+  monitorFN(e){
+    console.log(e)
+  },
+  //监听学生任务
   onMyEvent(e){
-    console.log(1,e)
+    let type = e.detail.type;
+    // 0 查看全部
   },
 })

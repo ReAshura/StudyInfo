@@ -31,12 +31,12 @@
 
 <view class="line"></view>
 
-<video-item runAllList="{{true}}" titleShow="{{true}}"></video-item>
+<video-item titleShow="{{true}}" bind:myevent="monitorFN"></video-item>
 
 <view class="line"></view>
 
-<word-item runAllList="{{true}}" titleShow="{{true}}"></word-item>
+<word-item titleShow="{{true}}"></word-item>
 
 <view class="line"></view>
 
-<done-student runAllList="{{true}}" titleShow="{{true}}" bindmyevent="onMyEvent"></done-student>
+<done-student titleShow="{{true}}" bindmyevent="onMyEvent"></done-student>
