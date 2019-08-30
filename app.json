@@ -14,7 +14,8 @@
     "pages/teacher/taskPush/taskPush",
     "pages/teacher/myStudent/myStudent",
     "pages/teacher/seeInfo/seeInfo",
-    "pages/student/integral/integral"
+    "pages/student/integral/integral",
+    "pages/teacher/videoPush/videoPush"
   ],
   "window": {
     "backgroundTextStyle": "light",

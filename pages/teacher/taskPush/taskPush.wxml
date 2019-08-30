@@ -1,5 +1,5 @@
 <search-input bindmyevent="searchFN"/>
 
-<video-item  runAllList="{{true}}" titleShow="{{true}}"/>
+<video-item  runAllList="{{true}}" titleShow="{{true}}" bindmyevent="monitorFN"/>
 
 <word-item  runAllList="{{true}}" titleShow="{{true}}"/>
