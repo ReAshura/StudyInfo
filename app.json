@@ -15,7 +15,9 @@
     "pages/teacher/myStudent/myStudent",
     "pages/teacher/seeInfo/seeInfo",
     "pages/student/integral/integral",
-    "pages/teacher/videoPush/videoPush"
+    "pages/teacher/videoPush/videoPush",
+    "pages/student/course/course",
+    "pages/student/courseList/courseList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,14 +37,8 @@
         "selectedIconPath": "images/focus_index.png"
       },
       {
-        "pagePath": "pages/student/videobox/videobox",
-        "text": "视频教材",
-        "iconPath": "images/blur_video.png",
-        "selectedIconPath": "images/focus_video.png"
-      },
-      {
-        "pagePath": "pages/student/wordbox/wordbox",
-        "text": "文字教材",
+        "pagePath": "pages/student/course/course",
+        "text": "课程列表",
         "iconPath": "images/blur_font.png",
         "selectedIconPath": "images/focus_font.png"
       },

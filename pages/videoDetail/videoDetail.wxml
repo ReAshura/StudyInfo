@@ -29,6 +29,7 @@
     </view>
     <view class="tips_cont">
       浏览视频，需要观看完整视频后，即可获取积分。
+      任务剩余时间: {{timeStr}}
     </view>
   </view>
 </view>

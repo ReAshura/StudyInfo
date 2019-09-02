@@ -1,12 +1,11 @@
-// components/vedio-item/vedio-item.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    runAllList:{
-      type:Boolean,
-      value:false
+    runAllList: {
+      type: Boolean,
+      value: false
     },
     titleShow: {
       type: Boolean,
@@ -15,7 +14,7 @@ Component({
     searchBtn: {
       type: Boolean,
       value: false
-    }, 
+    },
     pushBtn: {
       type: Boolean,
       value: false
@@ -38,10 +37,19 @@ Component({
    */
   methods: {
     // 点击查看全部
-    _lookAll(){
+    _lookAll() {
       let myEventDetail = {
-        'type': 0
+        'type': 0 //0查看全部 1 点击列表
       }
+      this.triggerEvent('myevent', myEventDetail)
+    },
+    // 点击列表的item
+    _itemDetail(e){
+      let myEventDetail = {
+        'type': 1, //0查看全部 1 点击列表
+        'id': e.currentTarget.dataset.id
+      }
+      
       this.triggerEvent('myevent', myEventDetail)
     }
   }

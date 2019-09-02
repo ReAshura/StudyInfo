@@ -4,13 +4,9 @@
 <swiperbox></swiperbox>
 
 <view class="navbox">
-  <navigator class="nav_item" url="../videobox/videobox" open-type="switchTab">
-    <image src="/images/videoIcon.svg" mode="widthFix"></image>
-    <text>视频教材</text>
-  </navigator>
-  <navigator class="nav_item" url="../wordbox/wordbox" open-type="switchTab">
+  <navigator class="nav_item" url="../course/course" open-type="switchTab">
     <image src="/images/bookIcon.svg" mode="widthFix"></image>
-    <text>文字教材</text>
+    <text>课程列表</text>
   </navigator>
   <navigator class="nav_item" url="../integral/integral">
     <image src="/images/jifenIcon.svg" mode="widthFix"></image>

@@ -25,5 +25,5 @@
   color: #d8d3d3;
   top: 6rpx;
   right: 50rpx;
-  z-index: 9999;
+  z-index: 10;
 }

@@ -2,8 +2,7 @@
 <view class="myheadbox">
   <view class="myxuehao">更改头像</view>
   <view class="myimgbox">
-    <image src="/images/banner.png" bindtap="setimg"></image>
-    <view>张三</view>
+    <image src="/images/demo.svg" bindtap="setimg"></image>
   </view>
 </view>
 
