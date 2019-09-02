@@ -11,6 +11,14 @@ Component({
     titleShow: {
       type: Boolean,
       value: false
+    },
+    searchBtn: {
+      type: Boolean,
+      value: false
+    },
+    pushBtn: {
+      type: Boolean,
+      value: false
     }
   },
 

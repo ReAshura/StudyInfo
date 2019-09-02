@@ -19,7 +19,14 @@
           <image src="/images/money.svg"></image>
           <text>20 分</text>
         </view>
-        <button> 
+        <button wx:if="{{searchBtn}}" class='speedStyle'> 
+          <text class="iconfont hostIcon"></text>
+          12人完成
+        </button>
+        <button wx:elif="{{pushBtn}}"> 
+          发布
+        </button>
+        <button wx:else> 
           <text class="iconfont hostIcon"></text>
           未完成
         </button>
@@ -34,7 +41,17 @@
           <image src="/images/money.svg"></image>
           <text>20 分</text>
         </view>
-        <button>未完成</button>
+        <button wx:if="{{searchBtn}}" class='speedStyle'> 
+          <text class="iconfont hostIcon"></text>
+          12人完成
+        </button>
+        <button wx:elif="{{pushBtn}}"> 
+          发布
+        </button>
+        <button wx:else> 
+          <text class="iconfont hostIcon"></text>
+          未完成
+        </button>
       </view>
     </navigator>
 
@@ -46,7 +63,17 @@
           <image src="/images/money.svg"></image>
           <text>20 分</text>
         </view>
-        <button>未完成</button>
+        <button wx:if="{{searchBtn}}" class='speedStyle'> 
+          <text class="iconfont hostIcon"></text>
+          12人完成
+        </button>
+        <button wx:elif="{{pushBtn}}"> 
+          发布
+        </button>
+        <button wx:else> 
+          <text class="iconfont hostIcon"></text>
+          未完成
+        </button>
       </view>
     </navigator>
   

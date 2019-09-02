@@ -1,7 +1,7 @@
 <!--pages/student/mybox/mybox.wxml-->
 <view class="myheadbox">
   <view class="myimgbox">
-    <image src="http://api.govision.cn/uploads/userphoto/{{myInfo.photo}}"></image>
+    <image src="/images/demo.svg"></image>
     <view>{{myInfo.trueName}}</view>
   </view>
   <view class="myxuehao">学号:{{myInfo.userName}}</view>
@@ -12,7 +12,7 @@
     <image src="/images/money.svg"></image>
     <view>8000  积分</view>
   </view>
-  <button>积分记录</button>
+  <button bindtap='jumpJF' >积分记录</button>
 </view>
 
 <navigator class="next_item" url="../myinfo/myinfo">
@@ -30,3 +30,5 @@
   </view>
   <text class="iconfont nexticon"></text>
 </navigator>
+
+<view class='outuser' bindtap='useroutFN'>退出登录</view>

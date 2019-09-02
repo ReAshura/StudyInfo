@@ -2,34 +2,17 @@
   <view class="listhead" wx:if="{{titleShow}}">
     <view class="listtitle">
       <text class="comlus"></text>
-      <view class="listtext">视频教材</view>
+      <view class="listtext">{{titleText}}</view>
     </view>
-    <view class="listnext" wx:if="{{runAllList}}">
+    <view class="listnext" wx:if="{{runAllList}}" catchtap='_lookAll'>
       查看全部
       <text class="iconfont run"></text>
     </view>
   </view>
 
   <view class="list_cont">
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
-          </view>
-          <button> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
-        </view>
-      </view>
-    </navigator>
 
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+    <view class="list_item" catchtap='_itemDetail' data-id='0'>
       <image src="/images/banner.png"></image>
       <view class="listright">
         <view class="item_title">进入倪光南大学事项</view>
@@ -39,15 +22,23 @@
             <image src="/images/money.svg"></image>
             <text>20 分</text>
           </view>
-          <button> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
-        </view>
-      </view>
-    </navigator>
 
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+          <button wx:if="{{searchBtn}}" class='speedStyle'> 
+            <text class="iconfont hostIcon"></text>
+            12人完成
+          </button>
+          <button wx:elif="{{pushBtn}}"> 
+            发布
+          </button>
+          <button wx:else> 
+            <text class="iconfont hostIcon"></text>
+            未完成
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <view class="list_item" catchtap='_itemDetail' data-id='1'>
       <image src="/images/banner.png"></image>
       <view class="listright">
         <view class="item_title">进入倪光南大学事项</view>
@@ -57,13 +48,45 @@
             <image src="/images/money.svg"></image>
             <text>20 分</text>
           </view>
-          <button> 
+          <button wx:if="{{searchBtn}}" class='speedStyle'> 
+            <text class="iconfont hostIcon"></text>
+            12人完成
+          </button>
+          <button wx:elif="{{pushBtn}}"> 
+            发布
+          </button>
+          <button wx:else> 
             <text class="iconfont hostIcon"></text>
             未完成
           </button>
         </view>
       </view>
-    </navigator>
+    </view>
+
+    <view class="list_item" catchtap='_itemDetail' data-id='2'>
+      <image src="/images/banner.png"></image>
+      <view class="listright">
+        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_time">2019.03.11 布置</view>
+        <view class="item_icon">
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>20 分</text>
+          </view>
+          <button wx:if="{{searchBtn}}" class='speedStyle'> 
+            <text class="iconfont hostIcon"></text>
+            12人完成
+          </button>
+          <button wx:elif="{{pushBtn}}"> 
+            发布
+          </button>
+          <button wx:else> 
+            <text class="iconfont hostIcon"></text>
+            未完成
+          </button>
+        </view>
+      </view>
+    </view>
 
 
   </view>

@@ -94,4 +94,11 @@
   content: '\e628';
   color: #fff;
 }
-
+.item_icon>.speedStyle {
+  background-color: #F3F1E3;
+  color: #717171;
+}
+.speedStyle>.hostIcon::after {
+  content: '\e6c6';
+  color: #717171;
+}

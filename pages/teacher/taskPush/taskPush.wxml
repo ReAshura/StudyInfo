@@ -1,5 +1,27 @@
-<search-input bindmyevent="searchFN"/>
+<search-input bindmyevent="searchFN" />
 
-<video-item  runAllList="{{true}}" titleShow="{{true}}" bindmyevent="monitorFN"/>
+<course-list bind:myevent="monitorFN" pushBtn="{{true}}" titleText="最近发布的任务" titleShow="{{true}}"></course-list>
 
-<word-item  runAllList="{{true}}" titleShow="{{true}}"/>
+<!-- <video-item  runAllList="{{true}}" titleShow="{{true}}" /> -->
+
+<!-- <word-item runAllList="{{true}}" titleShow="{{true}}" pushBtn="{{true}}" /> -->
+
+<view class='popup' wx:if="{{popbool}}" bindtap='closepop'>
+  <view class='popbox' catchtap='stopclose'>
+    <view class='iconbox'>
+      <text>选择发布任务的学生标签</text>
+      <icon type="clear" size="22" bindtap='closepop' />
+    </view>
+    <view class='activBox'>
+      <view class='activitem' wx:for="{{currList}}" wx:key="id">
+        <icon type="clear" size="18" color='#ff5a00' bindtap='removeItem' data-id="{{index}}"/>
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+    <view>学生标签:</view>
+    <view class='tagBox'>
+      <view class='tagitem' wx:for="{{mokeList}}" wx:key="id" catchtap='addTag' data-id='{{index}}'>{{item.name}}</view>
+    </view>
+    <button class='babytjBtn' catchtap='closepop'>确认</button>
+  </view>
+</view>

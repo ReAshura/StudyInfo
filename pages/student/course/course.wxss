@@ -1,5 +1,5 @@
-/* components/teacher-video/teacher-video.wxss */
-@import '../../utils/iconfont.wxss';
+/* pages/student/course/course.wxss */
+@import '../../../utils/iconfont.wxss';
 .listbox {
   overflow: hidden;
 }
@@ -94,4 +94,3 @@
   content: '\e628';
   color: #fff;
 }
-

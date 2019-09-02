@@ -14,5 +14,19 @@ Page({
       })
       console.log(this.data.myInfo)
     })
+  },
+  //跳转到积分页面
+  jumpJF(){
+    wx.navigateTo({
+      url: '../integral/integral',
+    })
+  },
+  // 退出登录
+  useroutFN(){
+    app.globalData.userType = '',
+    app.globalData.userInfo = {}
+    wx.reLaunch({
+      url: '/pages/login/login'
+    })
   }
 })

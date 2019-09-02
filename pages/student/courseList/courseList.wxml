@@ -1,0 +1,6 @@
+<!--pages/student/courseList/courseList.wxml-->
+<search-input />
+
+<video-item />
+
+<word-item />

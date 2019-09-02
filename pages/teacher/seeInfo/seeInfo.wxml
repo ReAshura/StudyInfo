@@ -42,8 +42,8 @@
 
 <view class='speedBox'>
   <view class='selectTi'>
-    <view class='activ'>已完成任务</view>
-    <view>未完成任务</view>
+    <view>已完成任务</view>
+    <view class='activ'>未完成任务</view>
   </view>
 </view>
 
