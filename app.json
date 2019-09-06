@@ -17,12 +17,14 @@
     "pages/student/integral/integral",
     "pages/teacher/videoPush/videoPush",
     "pages/student/course/course",
-    "pages/student/courseList/courseList"
+    "pages/courseList/courseList",
+    "pages/teacher/taskDetail/taskDetail",
+    "pages/student/courseDone/courseDone"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "东南大学至善学习平台",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

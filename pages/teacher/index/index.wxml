@@ -31,8 +31,8 @@
 
 <view class="line"></view>
 
-<course-list bind:myevent="monitorFN" searchBtn="{{true}}" titleText="最近发布的任务"  titleShow="{{true}}"></course-list>
+<course-list bind:myevent="monitorFN" searchBtn="{{true}}" titleText="最近发布的任务"  titleShow="{{true}}" runAllList="{{true}}" tag="{{true}}"></course-list>
 
 <view class="line"></view>
 
-<done-student titleShow="{{true}}" bindmyevent="onMyEvent"></done-student>
+<done-student titleShow="{{true}}" bindmyevent="studentEvent"></done-student>

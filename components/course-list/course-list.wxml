@@ -12,78 +12,108 @@
 
   <view class="list_cont">
 
-    <view class="list_item" catchtap='_itemDetail' data-id='0'>
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
-          </view>
+    <block wx:for="{{dataList}}" wx:key="id">
+      <view class="list_item" catchtap='_itemDetail' data-id='{{item.courseId}}'>
+         <view class='topbox'>
+          <image src="/images/banner.png"></image>
+          <view class="listright">
+            <view class="item_title">{{item.courseName}}</view>
+            <view class="item_time">2019.03.11 布置</view>
+            <view class="item_icon">
+              <view class="item_icon_left">
+                <image src="/images/money.svg"></image>
+                <text>{{item.totalPoint}} 分</text>
+              </view>
 
-          <button wx:if="{{searchBtn}}" class='speedStyle'> 
-            <text class="iconfont hostIcon"></text>
-            12人完成
-          </button>
-          <button wx:elif="{{pushBtn}}"> 
-            发布
-          </button>
-          <button wx:else> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
+              <button wx:if="{{searchBtn}}" class='speedStyle'> 
+                <text class="iconfont hostIcon"></text>
+                12人完成
+              </button>
+              <button wx:elif="{{pushBtn}}"> 
+                发布
+              </button>
+              <!-- <button wx:else> 
+                <text class="iconfont hostIcon"></text>
+                未完成
+              </button> -->
+            </view>
+          </view>
+         </view>
+         <view class='tagBox' wx:if="{{tag}}">
+            <view class='activitem'>
+              <view>测试假数据标签</view>
+            </view>
+            <view class='activitem'>
+              <view>测试假数据标签2</view>
+            </view>
+          </view>
+      </view>
+    </block>
+
+    <view class="list_item" catchtap='_itemDetail' data-id=''>
+      <view class='topbox'>
+        <image src="/images/banner.png"></image>
+        <view class="listright">
+          <view class="item_title">进入倪光南大学事项</view>
+          <view class="item_time">2019.03.11 布置</view>
+          <view class="item_icon">
+            <view class="item_icon_left">
+              <image src="/images/money.svg"></image>
+              <text>100 分</text>
+            </view>
+            <button wx:if="{{searchBtn}}" class='speedStyle'> 
+              <text class="iconfont hostIcon"></text>
+              12人完成
+            </button>
+            <button wx:elif="{{pushBtn}}"> 
+              发布
+            </button>
+            <!-- <button wx:else> 
+              <text class="iconfont hostIcon"></text>
+              未完成
+            </button> -->
+          </view>
+        </view>
+      </view>
+      <view class='tagBox' wx:if="{{tag}}">
+        <view class='activitem'>
+          <view>测试假数据标签</view>
+        </view>
+        <view class='activitem'>
+          <view>测试假数据标签2</view>
         </view>
       </view>
     </view>
 
-    <view class="list_item" catchtap='_itemDetail' data-id='1'>
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
+    <view class="list_item" catchtap='_itemDetail' data-id=''>
+      <view class='topbox'>
+        <image src="/images/banner.png"></image>
+        <view class="listright">
+          <view class="item_title">进入倪光南大学事项</view>
+          <view class="item_time">2019.03.11 布置</view>
+          <view class="item_icon">
+            <view class="item_icon_left">
+              <image src="/images/money.svg"></image>
+              <text>100 分</text>
+            </view>
+            <button wx:if="{{searchBtn}}" class='speedStyle'> 
+              <text class="iconfont hostIcon"></text>
+              12人完成
+            </button>
+            <button wx:elif="{{pushBtn}}"> 
+              发布
+            </button>
+            <!-- <button wx:else> 
+              <text class="iconfont hostIcon"></text>
+              未完成
+            </button> -->
           </view>
-          <button wx:if="{{searchBtn}}" class='speedStyle'> 
-            <text class="iconfont hostIcon"></text>
-            12人完成
-          </button>
-          <button wx:elif="{{pushBtn}}"> 
-            发布
-          </button>
-          <button wx:else> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
         </view>
       </view>
-    </view>
-
-    <view class="list_item" catchtap='_itemDetail' data-id='2'>
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
-          </view>
-          <button wx:if="{{searchBtn}}" class='speedStyle'> 
-            <text class="iconfont hostIcon"></text>
-            12人完成
-          </button>
-          <button wx:elif="{{pushBtn}}"> 
-            发布
-          </button>
-          <button wx:else> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
+      <view class='tagBox' wx:if="{{tag}}">
+        <!--  wx:for="{{currList}}" wx:key="id" -->
+        <view class='activitem'>
+          <view>测试假数据标签</view>
         </view>
       </view>
     </view>

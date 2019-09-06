@@ -1,7 +1,6 @@
 {
   "usingComponents": {
     "course-list": "/components/course-list/course-list",
-    "word-item": "/components/word-item/word-item",
     "done-student":"/components/done-student/done-student"
   }
 }

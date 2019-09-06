@@ -1,4 +1,4 @@
 <!--pages/student/wordbox/wordbox.wxml-->
 <search-input bindmyevent="searchFN"/>
 
-<word-item></word-item>
+<word-list />

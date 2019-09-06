@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "video-item": "/components/video-item/video-item",
+    "video-list": "/components/video-list/video-list",
     "search-input": "/components/search-input/search-input"
   }
 }

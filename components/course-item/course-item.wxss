@@ -102,3 +102,67 @@
   content: '\e6c6';
   color: #717171;
 }
+/* 文字 */
+.crearcolumn{
+  flex-direction: column;
+}
+.wordtitle {
+  font-size: 32rpx;
+  letter-spacing: 1rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 22rpx;
+}
+.word_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item_time {
+  font-size: 24rpx;
+  color: #adadad;
+}
+.item_time {
+  font-size: 24rpx;
+  color: #adadad;
+}
+.item_icon_left {
+  display: flex;
+  align-items: center;
+}
+.item_icon_left>image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.item_icon_left>text {
+  color: #d72020;
+  font-size: 26rpx;
+  margin-left: 8rpx;
+}
+.word_bottom>button {
+  margin: 0;
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 57rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #29833c;
+  margin-left: 12rpx;
+}
+.hostIcon::after {
+  content: '\e628';
+  color: #fff;
+}
+.word_bottom>.speedStyle {
+  background-color: #F3F1E3;
+  color: #717171;
+}
+.speedStyle>.hostIcon::after {
+  content: '\e6c6';
+  color: #717171;
+}

@@ -22,11 +22,10 @@
   </view>
   <text class="iconfont nexticon"></text>
 </navigator>
-
-<navigator class="next_item" url="../progresinfo/progresinfo">
+<navigator class="next_item" url="../courseDone/courseDone">
   <view class="next_left">
     <image src="/images/jifenIcon.svg"></image>
-    <view>已完成教材</view>
+    <view>已完成课程</view>
   </view>
   <text class="iconfont nexticon"></text>
 </navigator>

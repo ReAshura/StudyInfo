@@ -7,21 +7,18 @@ Page({
   },
   onLoad: function (options) {
     // 获取学生所学课程列表
-    // this.getcourseList();
+    this.getcourseList();
     
   },
   // 获取学生所学课程列表
   getcourseList(){
     let data = {
-      userName: app.globalData.userName,
-      password: app.globalData.password
+      userId: app.globalData.userInfo.id
     }
     app.wxAjax('/course/userCourseInfoList', data).then(res=>{
       this.setData({
         courseList: res.dataList
       })
-      // this.videoDetail(1)
-      // console.log(this.data.courseList)
     })
   },
   // 监听到点击搜索按钮
@@ -46,5 +43,17 @@ Page({
     Promise.all(videoList).then(res=>{
       console.log(res)
     })
+  },
+  //课程列表点击
+  listFN(e){
+    if (e.detail.type === 1){
+      wx.navigateTo({
+        url: '../../courseList/courseList?courseId=' + e.detail.id,
+      })
+    }else {
+      wx.switchTab({
+        url: '../course/course',
+      })
+    }
   }
 })

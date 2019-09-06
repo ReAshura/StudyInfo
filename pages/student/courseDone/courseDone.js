@@ -1,4 +1,3 @@
-// pages/student/course/course.js
 Page({
   data: {
 
@@ -10,7 +9,7 @@ Page({
   listFN(e) {
     if (e.detail.type === 1) {
       wx.navigateTo({
-        url: '../../courseList/courseList?courseId=' + e.detail.id,
+        url: '../progresinfo/progresinfo',
       })
     }
   }

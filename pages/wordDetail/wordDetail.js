@@ -1,10 +1,13 @@
-// pages/wordDetail/wordDetail.js
+// pages/wordDetail/wordDetail.js.
+const app = getApp();
 Page({
   data: {
-    
+    userType: null, // 2教师 3学生
   },
   onLoad: function (options) {
-    
+    this.setData({
+      userType: app.globalData.userType
+    })
   },
 
   /**

@@ -1,4 +1,4 @@
 <!--pages/student/videobox/videobox.wxml-->
 <search-input bindmyevent="searchFN"/>
 
-<video-item></video-item>
+<video-list />

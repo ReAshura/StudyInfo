@@ -7,10 +7,16 @@
       <image src="/images/money.svg"></image>
       <text>20 分</text>
     </view>
-    <button> 
+    <button  wx:if="{{userType == 3}}"> 
       <text class="iconfont hostIcon"></text>
       未完成
     </button>
+    <button wx:elif="{{userType == 2}}" class='speedStyle'> 
+      <text class="iconfont hostIcon"></text>
+      12人完成
+    </button>
+    
+    
   </view>
 </view>
 

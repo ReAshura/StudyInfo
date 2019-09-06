@@ -1,4 +1,3 @@
-/* components/word-item/word-item.wxss */
 @import '../../utils/iconfont.wxss';
 .listbox {
   overflow: hidden;
@@ -36,6 +35,7 @@
   padding: 0 32rpx;
   box-sizing: border-box;
 }
+
 .list_item {
   padding: 42rpx 0;
   box-sizing: border-box;
@@ -45,37 +45,30 @@
 .list_item:last-child{
   border:none;
 }
-.crearcolumn{
-  flex-direction: column;
+.list_item>image {
+  height: 150rpx;
+  width: 226rpx;
+  border-radius: 8rpx;
 }
-.wordtitle {
-  font-size: 32rpx;
-  letter-spacing: 1rpx;
-  display: -webkit-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  white-space: normal !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  margin-bottom: 22rpx;
+.listright {
+  margin-left: 26rpx;
 }
-.word_bottom {
+.item_title {
+  font-size: 28rpx;
+}
+.item_time {
+  margin:12rpx 0;
+  font-size: 24rpx;
+  color: #adadad;
+}
+.item_icon {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-.item_time {
-  font-size: 24rpx;
-  color: #adadad;
-}
-.item_time {
-  font-size: 24rpx;
-  color: #adadad;
 }
 .item_icon_left {
   display: flex;
   align-items: center;
+  width: 220rpx;
 }
 .item_icon_left>image {
   width: 46rpx;
@@ -86,7 +79,7 @@
   font-size: 26rpx;
   margin-left: 8rpx;
 }
-.word_bottom>button {
+.item_icon>button {
   margin: 0;
   width: 200rpx;
   height: 58rpx;
@@ -100,7 +93,7 @@
   content: '\e628';
   color: #fff;
 }
-.word_bottom>.speedStyle {
+.item_icon>.speedStyle {
   background-color: #F3F1E3;
   color: #717171;
 }

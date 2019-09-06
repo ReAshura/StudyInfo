@@ -1,4 +1,4 @@
-<!--pages/student/course/course.wxml-->
+<!--pages/student/courseDone/courseDone.wxml-->
 <search-input />
 
 <course-list bindmyevent="listFN"/>

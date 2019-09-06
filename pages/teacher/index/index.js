@@ -17,13 +17,26 @@ Page({
       console.log(res)
     })
   },
-  // 监听视频点击
+  // 监听课程列表点击
   monitorFN(e){
-    console.log(e)
+    let type = e.detail.type;// 0 查看全部 1查看列表
+    if (type === 1){
+      wx.navigateTo({
+        url: '../taskDetail/taskDetail?courseId=' + e.detail.id,
+      })
+    }else{
+      wx.navigateTo({
+        url: '../taskView/taskView'
+      })
+    }
   },
   //监听学生任务
-  onMyEvent(e){
-    let type = e.detail.type;
-    // 0 查看全部
+  studentEvent(e){
+    let type = e.detail.type;// 0 查看全部 1查看列表
+    if (type === 1){
+      wx.navigateTo({
+        url: '../seeInfo/seeInfo',
+      })
+    }
   },
 })
