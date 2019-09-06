@@ -1,10 +1,6 @@
 <search-input bindmyevent="searchFN" />
 
-<course-list bind:myevent="monitorFN" pushBtn="{{true}}" titleText="最近发布的任务" titleShow="{{true}}"></course-list>
-
-<!-- <video-item  runAllList="{{true}}" titleShow="{{true}}" /> -->
-
-<!-- <word-item runAllList="{{true}}" titleShow="{{true}}" pushBtn="{{true}}" /> -->
+<course-list bind:myevent="monitorFN" pushBtn="{{true}}" titleText="最近任务列表" titleShow="{{true}}" tag="{{true}}"></course-list>
 
 <view class='popup' wx:if="{{popbool}}" bindtap='closepop'>
   <view class='popbox' catchtap='stopclose'>

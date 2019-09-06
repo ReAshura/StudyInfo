@@ -14,14 +14,18 @@
       <image src="/images/money.svg"></image>
       <text>20 分</text>
     </view>
-    <button> 
+    <button wx:if="{{userType == 3}}"> 
       <text class="iconfont hostIcon"></text>
       未完成
+    </button>
+    <button wx:elif="{{userType == 2}}" class='speedStyle'> 
+      <text class="iconfont hostIcon"></text>
+      12人完成
     </button>
   </view>
 </view>
 
-<view class="studentDetail contentbox">
+<view class="studentDetail contentbox" wx:if="{{userType==3}}">
   <view class="tipsBox">
     <view class="tipsTi">
       <icon type="warn" size="20" color="#fe9955"/>
@@ -32,4 +36,43 @@
       任务剩余时间: {{timeStr}}
     </view>
   </view>
+</view>
+<view wx:elif="{{userType == 2}}">
+  <view class='speedBox'>
+    <view class='selectTi'>
+      <view class="{{denotype===0?'activ':''}}" data-id='{{0}}' bindtap='tasktypeFN'>已完成任务</view>
+      <view class="{{denotype===1?'activ':''}}" data-id='{{1}}' bindtap='tasktypeFN'>未完成任务</view>
+    </view>
+  </view>
+
+  <view class="list_cont">
+    <!-- url='../teacher/seeInfo/seeInfo' -->
+    <view class='s_item' >
+      <view class='item_info t1'>
+        <image src='/images/demo.svg'></image>
+        <view>张三</view>
+      </view>
+      <view class='t2'>
+        <text>49</text>
+      </view>
+      <view class='t2'>
+        <text>59%</text>
+      </view>
+    </view>
+
+    <view class='s_item'>
+      <view class='item_info t1'>
+        <image src='/images/demo.svg'></image>
+        <view>张三</view>
+      </view>
+      <view class='t2'>
+        <text>49</text>
+      </view>
+      <view class='t2'>
+        <text>59%</text>
+      </view>
+    </view>
+
+  </view>
+
 </view>

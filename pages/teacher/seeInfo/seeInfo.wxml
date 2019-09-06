@@ -14,8 +14,8 @@
   </view>
 </view>
 
-<view class='tagbox'>
-  <view class='tagTop'>
+<view class='tagboxTop'>
+  <!-- <view class='tagTop'>
 
     <view class='tagitem'>
       <text>自定义标签1</text>
@@ -32,71 +32,49 @@
       <icon type="clear" size="18" color="#ff5a00"/>
     </view>
 
-  </view>
-  <button>学生标签管理</button>
+  </view> -->
+  <view class='activBox'>
+      <view class='activitem' wx:for="{{currList}}" wx:key="id">
+        <icon type="clear" size="18" color='#ff5a00' bindtap='removeItem' data-id="{{index}}"/>
+        <view>{{item.name}}</view>
+      </view>
+    </view>
+  <button bindtap='pushBtn'>学生标签管理</button>
 </view>
-
+<!--   -->
 <view class='echartsBox'>
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}" class="{{popbool?'moveOut':''}}"/>
 </view>
 
 <view class='speedBox'>
   <view class='selectTi'>
-    <view>已完成任务</view>
-    <view class='activ'>未完成任务</view>
+    <view class="{{type===0?'activ':''}}" data-id='{{0}}' bindtap='tasktypeFN'>已完成任务</view>
+    <view class="{{type===1?'activ':''}}" data-id='{{1}}' bindtap='tasktypeFN'>未完成任务</view>
   </view>
 </view>
 
 <view class="list_cont">
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
-          </view>
-          <button> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
-        </view>
+  <course-list bindmyevent="courseEvent"/>
+
+</view>
+
+<view class='popup' wx:if="{{popbool}}" bindtap='closepop'>
+  <view class='popbox' catchtap='stopclose'>
+    <view class='iconbox'>
+      <text>选择发布任务的学生标签</text>
+      <icon type="clear" size="22" bindtap='closepop' />
+    </view>
+    <view class='activBox'>
+      <view class='activitem' wx:for="{{currList}}" wx:key="id">
+        <icon type="clear" size="18" color='#ff5a00' bindtap='removeItem' data-id="{{index}}"/>
+        <view>{{item.name}}</view>
       </view>
-    </navigator>
-
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
-          </view>
-          <button> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
-        </view>
-      </view>
-    </navigator>
-
-    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
-      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
-      <view class="word_bottom">
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon_left">
-          <image src="/images/money.svg"></image>
-          <text>20 分</text>
-        </view>
-        <button>未完成</button>
-      </view>
-    </navigator>
-
-
+    </view>
+    <view>学生标签:</view>
+    <view class='tagBox'>
+      <view class='tagitem' wx:for="{{mokeList}}" wx:key="id" catchtap='addTag' data-id='{{index}}'>{{item.name}}</view>
+    </view>
+    <button class='babytjBtn' catchtap='closepop'>确认</button>
   </view>
-
+</view>
 

@@ -5,8 +5,8 @@
 </view>
 
 <block wx:if="{{type}}">
-  <video-item></video-item>
+  <video-list />
 </block>
 <block wx:else>
-  <word-item></word-item>
+  <word-list />
 </block>

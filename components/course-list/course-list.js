@@ -3,25 +3,40 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 是否显示查看全部按钮
     runAllList: {
       type: Boolean,
       value: false
     },
+    // 是否显示 头部信息
     titleShow: {
       type: Boolean,
       value: false
     },
+    // 按钮变成 查看完成人数【默认：未完成】
     searchBtn: {
       type: Boolean,
       value: false
     },
+    // 按钮变成 上传的字样【默认：未完成】
     pushBtn: {
       type: Boolean,
       value: false
     },
+    // 标题文字 
     titleText: {
       type: String,
-      value: '视频教材'
+      value: '课程列表'
+    },
+    // 数据 
+    dataList: {
+      type:Array,
+      value:[]
+    },
+    // 测试标签【默认：不带标签】
+    tag: {
+      type:Boolean,
+      value:false
     }
   },
 

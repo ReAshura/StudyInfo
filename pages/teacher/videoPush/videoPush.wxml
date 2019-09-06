@@ -1,5 +1,5 @@
 <!--pages/teacher/videoPush/videoPush.wxml-->
 <search-input bindmyevent="searchFN"/>
 
-<video-item></video-item>
+<course-list />
 

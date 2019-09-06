@@ -1,4 +1,3 @@
-<!--components/word-item/word-item.wxml-->
 <view class="listbox">
   <view class="listhead" wx:if="{{titleShow}}">
     <view class="listtitle">

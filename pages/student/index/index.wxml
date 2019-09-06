@@ -16,10 +16,4 @@
 
 <view class="line"></view>
 
-<video-item runAllList="{{true}}" titleShow="{{true}}"></video-item>
-
-
-<view class="line"></view>
-
-
-<word-item runAllList="{{true}}" titleShow="{{true}}"></word-item>
+<course-list runAllList="{{true}}" titleShow="{{true}}" bindmyevent="listFN" dataList="{{courseList}}"/>

@@ -1,6 +1,4 @@
 <!--pages/teacher/taskView/taskView.wxml-->
 <search-input bindmyevent="searchFN"/>
 
-<video-item  runAllList="{{true}}" titleShow="{{true}}" bindmyevent="monitorFN" searchBtn="{{true}}"/>
-
-<word-item  runAllList="{{true}}" titleShow="{{true}}" searchBtn="{{true}}"/>
+<course-list bind:myevent="monitorFN" searchBtn="{{true}}" tag="{{true}}"/>

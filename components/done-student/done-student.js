@@ -25,11 +25,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    test(e){
-      console.log(e)
-      var myEventDetail = {} // detail对象，提供给事件监听函数
-      var myEventOption = {} // 触发事件的选项
-      this.triggerEvent('myevent', myEventDetail, myEventOption)
+    // 点击列表的item
+    _itemDetail(e) {
+      let myEventDetail = {
+        'type': 1, //0查看全部 1 点击列表
+        'id': e.currentTarget.dataset.id
+      }
+      this.triggerEvent('myevent', myEventDetail)
     }
   }
 })

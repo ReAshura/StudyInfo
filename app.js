@@ -39,7 +39,7 @@ App({
             this.wxAlert(res.data.message)
           }
         },
-        fail(e){
+        fail:(e)=>{
           wx.hideLoading();
           this.wxAlert('请求出错')
         }
