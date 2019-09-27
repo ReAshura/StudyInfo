@@ -1,21 +1,23 @@
 // pages/student/integral/integral.js
+const app = getApp();
 Page({
   data: {
-
+    dataList:[],
   },
-  onLoad: function (options) {
-    console.log('onLoad')
+  onLoad: function () {
+    // 获取该学生的积分情况
+    this.getIntegral();
   },
-  onReady: function () {
-    console.log('onReady')
-  },
-  onShow: function () {
-    console.log('onShow')
-  },
-  onHide: function () {
-    console.log('onHide')
-  },
-  onUnload: function () {
-    console.log('onUnload')
-  },
+  // 获取该学生的积分情况
+  getIntegral(){
+    let data = {
+      courseId:'',
+      studentId: app.globalData.userInfo.id,
+      start:1,
+      limit:-1
+    }
+    app.wxAjax('/learning/studentPointList', data).then(res=>{
+      console.log(res)
+    })
+  }
 })

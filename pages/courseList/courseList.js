@@ -2,9 +2,13 @@ const app = getApp();
 Page({
   data: {
     courseId:'',// 课程id
+    dataList:[],// 文章列表
   },
   onLoad: function (e) {
     if (e.courseId){
+      this.setData({
+        courseId: e.courseId
+      })
       this.getcourseDetail(e.courseId)
     }
   },
@@ -18,8 +22,11 @@ Page({
       limit:-1,
       courseId,
     }
-    app.wxAjax('/course/getUserCourseLearningLog', data).then(res=>{
-      console.log(res)
+    app.wxAjax('/learning/getUserCourseLearningLog', data).then(res=>{
+      this.setData({
+        dataList: res.dataList
+      })
+      console.log(this.data.dataList)
     })
   }
 })

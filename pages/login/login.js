@@ -4,8 +4,8 @@ Page({
   mixins:[require('../../Mixins.js')],
   data: {
     type: 1, // 1代表学生,0代表老师
-    username:'student1', // 输入的账号
-    password:'student1', // 输入的密码
+    username:'student', // 输入的账号
+    password:'student', // 输入的密码
   },
   onLoad: function (options) {
     
@@ -16,7 +16,7 @@ Page({
       app.wxAlert('请输入账号密码');
       return false;
     }
-    app.wxAjax('/account/login', { userName: this.data.username, password: this.data.password }).then(res => {
+    app.wxAjax('/account/login', { userName: this.data.username, password: this.data.password },'POST').then(res => {
       if (res.data.userType === 3) {
         wx.switchTab({
           url: '/pages/student/index/index'
@@ -27,7 +27,7 @@ Page({
         })
       }else{
         app.wxAlert('暂时仅支持学生和教师入口');
-        return false;
+        return false; 
       };
       app.globalData.userType = res.data.userType;
       app.globalData.userInfo = res.data;

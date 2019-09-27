@@ -1,7 +1,7 @@
 const app = getApp();
 Page({
   data: {
-    
+    courseList:[],
   },
   onLoad: function (options) {
     if (!app.globalData.userType) {
@@ -15,6 +15,9 @@ Page({
   getCourseList(){
     app.wxAjax('/course/courseInfoList', { code: '', name: '', teacherId: app.globalData.userInfo.id, start: 1, limit:-1}).then(res=>{
       console.log(res)
+      this.setData({
+        courseList: res.dataList
+      })
     })
   },
   // 监听课程列表点击

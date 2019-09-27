@@ -5,6 +5,7 @@ Page({
     userType: null, // 2教师 3学生
   },
   onLoad: function (options) {
+    console.log(options)
     this.setData({
       userType: app.globalData.userType
     })
