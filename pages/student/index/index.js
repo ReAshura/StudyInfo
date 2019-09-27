@@ -3,19 +3,20 @@ const app = getApp();
 Page({
   data: {
     courseList:[],  // 课程id列表
-
+    bannerList:[],  // banner图列表
   },
   onLoad: function (options) {
     // 获取学生所学课程列表
     this.getcourseList();
-    
+    // 获取banner图
+    this.getbannerImg();
   },
   // 获取学生所学课程列表
   getcourseList(){
     let data = {
       userId: app.globalData.userInfo.id
     }
-    app.wxAjax('/course/userCourseInfoList', data).then(res=>{
+    app.wxAjax('/learning/userCourseInfoList', data).then(res=>{
       this.setData({
         courseList: res.dataList
       })
@@ -55,5 +56,13 @@ Page({
         url: '../course/course',
       })
     }
+  },
+  // 获取banner图
+  getbannerImg(){
+    app.wxAjax('/common/crouselImageList', { start:1,limit:-1}).then(res=>{
+      this.setData({
+        bannerList: res.dataList
+      })
+    })
   }
 })

@@ -9,12 +9,20 @@ Page({
     userType:null, // 2教师 3学生
     pageEnd:false,// 页面是否加载完毕
     denotype:0,// 老师视角:学生完成状态
+    resourceId:'', // 资源id
   },
   onLoad: function (options) {
+    console.log(options)
     this.setData({
-      userType: app.globalData.userType
+      userType: app.globalData.userType,
+      resourceId: options.resourceId
     })
-    if (this.data.userType == 3) this.actionTimeOut();
+    if (this.data.userType == 3) {
+      // 学生端
+      this.actionTimeOut()
+      // 学生----获取资源信息
+      this.getStudentResource();
+    };
     
   },
   onShow: function () {
@@ -23,6 +31,19 @@ Page({
         timer: setInterval(this.dsqFN, 1000)
       })
     }
+  },
+  // 学生----获取资源信息
+  getStudentResource(){
+    let data = {
+      userId: app.globalData.userInfo.id,
+      resourceId: this.data.resourceId
+    }
+    app.wxAjax('/learning/getUserResource', data).then(res=>{
+      conso.log(res)
+    })
+    app.wxAjax('/course/getResource', { id: this.data.resourceId}).then(res => {
+      conso.log(res)
+    })
   },
   // 视频播放完毕出发
   endVideo() { 

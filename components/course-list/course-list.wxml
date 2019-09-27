@@ -13,7 +13,7 @@
   <view class="list_cont">
 
     <block wx:for="{{dataList}}" wx:key="id">
-      <view class="list_item" catchtap='_itemDetail' data-id='{{item.courseId}}'>
+      <view class="list_item" catchtap='_itemDetail' data-id='{{item.courseId}}' data-code="{{item.courseCode}}">
          <view class='topbox'>
           <image src="/images/banner.png"></image>
           <view class="listright">
@@ -25,21 +25,19 @@
                 <text>{{item.totalPoint}} 分</text>
               </view>
 
-              <button wx:if="{{searchBtn}}" class='speedStyle'> 
-                <text class="iconfont hostIcon"></text>
-                12人完成
+              <button wx:if="{{searchBtn && item.isPublished}}" class='speedStyle'> 
+                <text class="iconfont hostIcon"></text> {{item.finishedStudentCount}}人完成
               </button>
               <button wx:elif="{{pushBtn}}"> 
                 发布
               </button>
-              <!-- <button wx:else> 
-                <text class="iconfont hostIcon"></text>
-                未完成
-              </button> -->
+              <button wx:elif="{{speed}}" class='speedStyle'> 
+                <text>{{item.finishedCount}}</text> / <text>{{item.resourceCount}}</text>
+              </button>
             </view>
           </view>
          </view>
-         <view class='tagBox' wx:if="{{tag}}">
+         <view class='tagBox' wx:if="{{tag && item.isPublished}}">
             <view class='activitem'>
               <view>测试假数据标签</view>
             </view>
@@ -51,16 +49,17 @@
     </block>
 
     <view class="list_item" catchtap='_itemDetail' data-id=''>
-      <view class='topbox'>
+        <view class='topbox'>
         <image src="/images/banner.png"></image>
         <view class="listright">
-          <view class="item_title">进入倪光南大学事项</view>
+          <view class="item_title">假数据假数据</view>
           <view class="item_time">2019.03.11 布置</view>
           <view class="item_icon">
             <view class="item_icon_left">
               <image src="/images/money.svg"></image>
               <text>100 分</text>
             </view>
+
             <button wx:if="{{searchBtn}}" class='speedStyle'> 
               <text class="iconfont hostIcon"></text>
               12人完成
@@ -74,50 +73,16 @@
             </button> -->
           </view>
         </view>
-      </view>
-      <view class='tagBox' wx:if="{{tag}}">
-        <view class='activitem'>
-          <view>测试假数据标签</view>
         </view>
-        <view class='activitem'>
-          <view>测试假数据标签2</view>
-        </view>
-      </view>
-    </view>
-
-    <view class="list_item" catchtap='_itemDetail' data-id=''>
-      <view class='topbox'>
-        <image src="/images/banner.png"></image>
-        <view class="listright">
-          <view class="item_title">进入倪光南大学事项</view>
-          <view class="item_time">2019.03.11 布置</view>
-          <view class="item_icon">
-            <view class="item_icon_left">
-              <image src="/images/money.svg"></image>
-              <text>100 分</text>
-            </view>
-            <button wx:if="{{searchBtn}}" class='speedStyle'> 
-              <text class="iconfont hostIcon"></text>
-              12人完成
-            </button>
-            <button wx:elif="{{pushBtn}}"> 
-              发布
-            </button>
-            <!-- <button wx:else> 
-              <text class="iconfont hostIcon"></text>
-              未完成
-            </button> -->
+        <view class='tagBox' wx:if="{{tag}}">
+          <view class='activitem'>
+            <view>测试假数据标签</view>
+          </view>
+          <view class='activitem'>
+            <view>测试假数据标签2</view>
           </view>
         </view>
-      </view>
-      <view class='tagBox' wx:if="{{tag}}">
-        <!--  wx:for="{{currList}}" wx:key="id" -->
-        <view class='activitem'>
-          <view>测试假数据标签</view>
-        </view>
-      </view>
     </view>
-
 
   </view>
 </view>

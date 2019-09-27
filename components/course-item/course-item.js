@@ -1,4 +1,5 @@
 // components/vedio-item/vedio-item.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -8,10 +9,6 @@ Component({
       type:Boolean,
       value:false
     },
-    titleShow: {
-      type: Boolean,
-      value: false
-    },
     searchBtn: {
       type: Boolean,
       value: false
@@ -20,9 +17,13 @@ Component({
       type: Boolean,
       value: false
     },
-    titleText: {
-      type: String,
-      value: '视频教材'
+    dataList:{
+      type: Array,
+      value: []
+    },
+    studentType: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -30,7 +31,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    imgUrl: app.globalData.realmName + '/xuegong/uploads/thumbimage/'
   },
 
   /**

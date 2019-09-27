@@ -1,44 +1,83 @@
 <!--components/vedio-item/vedio-item.wxml-->
 <view class="listbox">
-  <view class="listhead" wx:if="{{titleShow}}">
-    <view class="listtitle">
-      <text class="comlus"></text>
-      <view class="listtext">{{titleText}}</view>
-    </view>
-    <view class="listnext" wx:if="{{runAllList}}" bindtap='_lookAll'>
-      查看全部
-      <text class="iconfont run"></text>
-    </view>
-  </view>
 
   <view class="list_cont">
-
-    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
-      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
-      <view class="word_bottom">
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon_left">
-          <image src="/images/money.svg"></image>
-          <text>20 分</text>
+    <block wx:for="{{dataList}}" wx:key="id">
+      <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail?resourceId={{item.id}}" wx:if="{{item.resourceType == 2}}">
+        <view class="wordtitle">{{item.name}}</view>
+        <view class="word_bottom">
+          <view class="item_time">2019.03.11 布置</view>
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>{{item.point}} 分</text>
+          </view>
+          <block wx:if="{{searchBtn}}">
+            <button class='speedStyle'> 
+              <text class="iconfont hostIcon"></text> 12人完成
+            </button>
+          </block>
+          <block wx:elif="{{studentType}}">
+            <button class='speedStyle' wx:if="{{item.status == 3}}"> 
+              <text class="iconfont hostIcon"></text> 已完成
+            </button>
+            <button class='speedStyle' wx:elif="{{item.status == 2}}"> 
+              学习中
+            </button>
+            <button wx:else> 
+              <text class="iconfont hostIcon"></text> 未完成
+            </button>
+          </block>
+          <button wx:elif="{{pushBtn}}"> 
+            发布
+          </button>
+          <block wx:else>
+            
+          </block>
         </view>
-        <button wx:if="{{searchBtn}}" class='speedStyle'> 
-          <text class="iconfont hostIcon"></text>
-          12人完成
-        </button>
-        <button wx:elif="{{pushBtn}}"> 
-          发布
-        </button>
-        <button wx:else> 
-          <text class="iconfont hostIcon"></text>
-          未完成
-        </button>
-      </view>
-    </navigator>
+      </navigator>
 
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
+      <navigator class="list_item" url="/pages/videoDetail/videoDetail?resourceId={{item.id}}" wx:elif="{{item.resourceType==1}}">
+        <image src="{{item.thumbImage?imgUrl+item.thumbImage:'/images/banner.png'}}" ></image>
+        <view class="listright">
+          <view class="item_title">{{item.name}}</view>
+          <view class="item_time">2019.03.11 布置</view>
+          <view class="item_icon">
+            <view class="item_icon_left">
+              <image src="/images/money.svg"></image>
+              <text>{{item.point}} 分</text>
+            </view>
+            <block wx:if="{{searchBtn}}">
+              <button class='speedStyle'> 
+                <text class="iconfont hostIcon"></text> 12人完成
+              </button>
+            </block>
+            <block wx:elif="{{studentType}}">
+              <button class='speedStyle' wx:if="{{item.status == 3}}"> 
+                <text class="iconfont hostIcon"></text> 已完成
+              </button>
+              <button class='speedStyle' wx:elif="{{item.status == 2}}"> 
+                学习中
+              </button>
+              <button wx:else> 
+                <text class="iconfont hostIcon"></text> 未完成
+              </button>
+            </block>
+            <block wx:elif="{{pushBtn}}">
+              <button>  发布 </button>
+            </block>
+            <block wx:else>
+              <button></button>
+            </block>
+          </view>
+        </view>
+      </navigator>
+    </block>
+
+
+    <!-- <navigator class="list_item" url="/pages/videoDetail/videoDetail">
       <image src="/images/banner.png"></image>
       <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
+        <view class="item_title">假数据假数据假数据</view>
         <view class="item_time">2019.03.11 布置</view>
         <view class="item_icon">
           <view class="item_icon_left">
@@ -61,7 +100,7 @@
     </navigator>
 
     <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
-      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
+      <view class="wordtitle">假数据假数据假数据</view>
       <view class="word_bottom">
         <view class="item_time">2019.03.11 布置</view>
         <view class="item_icon_left">
@@ -80,76 +119,7 @@
           未完成
         </button>
       </view>
-    </navigator>
-
-    <navigator class="list_item" url="/pages/videoDetail/videoDetail">
-      <image src="/images/banner.png"></image>
-      <view class="listright">
-        <view class="item_title">进入倪光南大学事项</view>
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon">
-          <view class="item_icon_left">
-            <image src="/images/money.svg"></image>
-            <text>20 分</text>
-          </view>
-          <button wx:if="{{searchBtn}}" class='speedStyle'> 
-            <text class="iconfont hostIcon"></text>
-            12人完成
-          </button>
-          <button wx:elif="{{pushBtn}}"> 
-            发布
-          </button>
-          <button wx:else> 
-            <text class="iconfont hostIcon"></text>
-            未完成
-          </button>
-        </view>
-      </view>
-    </navigator>
-
-    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
-      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
-      <view class="word_bottom">
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon_left">
-          <image src="/images/money.svg"></image>
-          <text>20 分</text>
-        </view>
-        <button wx:if="{{searchBtn}}" class='speedStyle'> 
-          <text class="iconfont hostIcon"></text>
-          12人完成
-        </button>
-        <button wx:elif="{{pushBtn}}"> 
-          发布
-        </button>
-        <button wx:else> 
-          <text class="iconfont hostIcon"></text>
-          未完成
-        </button>
-      </view>
-    </navigator>
-
-    <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail">
-      <view class="wordtitle">教育部高等教育司关于开展2019年度普通高等学校本科专业设置工作的通知</view>
-      <view class="word_bottom">
-        <view class="item_time">2019.03.11 布置</view>
-        <view class="item_icon_left">
-          <image src="/images/money.svg"></image>
-          <text>20 分</text>
-        </view>
-        <button wx:if="{{searchBtn}}" class='speedStyle'> 
-          <text class="iconfont hostIcon"></text>
-          12人完成
-        </button>
-        <button wx:elif="{{pushBtn}}"> 
-          发布
-        </button>
-        <button wx:else> 
-          <text class="iconfont hostIcon"></text>
-          未完成
-        </button>
-      </view>
-    </navigator>
+    </navigator> -->
 
 
   </view>

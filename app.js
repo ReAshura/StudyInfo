@@ -7,8 +7,10 @@ App({
   globalData: {
     userType: 2,// 用户状态 2是教师 3是学生 ''是初始状态
     userInfo: {}, // 用户信息
-    header: {'content-type': 'application/json'},
-    URL:'http://api.govision.cn/xuegong/v1',
+    URL:'http://api.govision.cn/xuegong/api',
+    realmName:'http://api.govision.cn',
+    BANNA:'http://api.govision.cn/xuegong/crouselimage/',
+    IMGURL:'http://api.govision.cn/xuegong/uploads/userphoto/',
     userName:'',// 用户账号
     password:'',// 用户密码
   },
@@ -23,14 +25,17 @@ App({
     })
   },
   // 封装请求
-  wxAjax(url, data = {}, method="GET", header = this.globalData.header){
-    wx.showLoading({ title: '拼命加载中....' })
+  wxAjax(url, data = {}, method="GET",){
+    wx.showLoading({ title: '拼命加载中....' });
+    let header = method !== 'GET' ? 'application/x-www-form-urlencoded' : 'application/json'
     return new Promise((resolve,reject)=>{
       wx.request({
         url: this.globalData.URL + url,
         data,
         method,
-        header,
+        header:{
+          'content-type': header
+        },
         success: (res) => {
           wx.hideLoading();
           if (res.data.result){

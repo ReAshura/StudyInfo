@@ -37,6 +37,11 @@ Component({
     tag: {
       type:Boolean,
       value:false
+    },
+    // 是否显示进度
+    speed:{
+      type: Boolean,
+      value: false
     }
   },
 

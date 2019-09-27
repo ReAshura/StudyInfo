@@ -11,14 +11,10 @@ Page({
   // 获取课程详情
   getcourseDetail(courseId) {
     let data = {
-      userId: app.globalData.userInfo.id,
-      resourceType: 0,
-      status: 0,
-      start: 1,
-      limit: -1,
-      courseId,
+      resourceType:2,
+      resourceId:courseId,
     }
-    app.wxAjax('/course/getUserCourseLearningLog', data).then(res => {
+    app.wxAjax('/course/getResourceStat', data).then(res => {
       console.log(res)
     })
   }

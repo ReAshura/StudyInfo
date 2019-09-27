@@ -2,6 +2,7 @@ const app = getApp();
 Page({
   data: {
     myInfo:{},// 我的个人信息
+    network: app.globalData.realmName + '/xuegong/uploads/userphoto/'
   },
   onLoad: function (options) {
     this.getUsetInfo(); // 获取个人信息
