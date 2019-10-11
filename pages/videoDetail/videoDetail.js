@@ -10,6 +10,9 @@ Page({
     pageEnd:false,// 页面是否加载完毕
     denotype:0,// 老师视角:学生完成状态
     resourceId:'', // 资源id
+    videoDetail:{}, // 资源详情
+    studentObj:{}, // 学生的完成情况
+    videoSrc: app.globalData.realmName + '/xuegong/uploads/resourcefile/',
   },
   onLoad: function (options) {
     console.log(options)
@@ -17,6 +20,8 @@ Page({
       userType: app.globalData.userType,
       resourceId: options.resourceId
     })
+    // 获取资源信息
+    this.getDetail();
     if (this.data.userType == 3) {
       // 学生端
       this.actionTimeOut()
@@ -26,11 +31,19 @@ Page({
     
   },
   onShow: function () {
-    if (this.data.pageEnd && this.data.userType == 3){
+    if (this.data.pageEnd && this.data.userType == 3 && this.data.timer){
       this.setData({
         timer: setInterval(this.dsqFN, 1000)
       })
     }
+  },
+  // 获取资源信息
+  getDetail(){
+    app.wxAjax('/course/getResource', { id: this.data.resourceId }).then(res => {
+      this.setData({
+        videoDetail: res.data
+      })
+    })
   },
   // 学生----获取资源信息
   getStudentResource(){
@@ -39,10 +52,9 @@ Page({
       resourceId: this.data.resourceId
     }
     app.wxAjax('/learning/getUserResource', data).then(res=>{
-      conso.log(res)
-    })
-    app.wxAjax('/course/getResource', { id: this.data.resourceId}).then(res => {
-      conso.log(res)
+      this.setData({
+        studentObj:res
+      })
     })
   },
   // 视频播放完毕出发
@@ -96,17 +108,13 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    if ( this.data.userType == 3) {
+    if (this.data.userType == 3 && this.data.timer) {
       clearInterval(this.data.timer)
     }
     
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-    if (this.data.userType == 3) {
+    if (this.data.userType == 3 && this.data.timer) {
       clearInterval(this.data.timer)
     }
   },

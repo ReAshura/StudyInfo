@@ -4,6 +4,7 @@ Page({
   data: {
     courseList:[],  // 课程id列表
     bannerList:[],  // banner图列表
+    searchStr:'', // 搜索内容
   },
   onLoad: function (options) {
     // 获取学生所学课程列表
@@ -14,6 +15,7 @@ Page({
   // 获取学生所学课程列表
   getcourseList(){
     let data = {
+      courseName: this.data.searchStr,
       userId: app.globalData.userInfo.id
     }
     app.wxAjax('/learning/userCourseInfoList', data).then(res=>{
@@ -24,7 +26,11 @@ Page({
   },
   // 监听到点击搜索按钮
   searchFN(e) {
-    console.log(e.detail.text)
+    this.setData({
+      searchStr: e.detail.text
+    })
+    // 获取学生所学课程列表
+    this.getcourseList();
   },
   // 获取课程详情
   videoDetail(type){

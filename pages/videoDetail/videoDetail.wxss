@@ -151,3 +151,40 @@ video {
   content: '\e6c6';
   color: #717171;
 }
+
+/* 视频列表 */
+.videoList {
+  border-top: 1rpx solid #878787;
+  margin-top: 32rpx;
+}
+.videoItem {
+  padding: 22rpx 32rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #878787;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.listLeftV {
+  display: flex;
+  align-items: center;
+}
+.listLeftV>view {
+  margin-left: 26rpx;
+  font-size: 30rpx;
+}
+.play::after {
+  content: '\e603';
+  color: #8b8b8b;
+  font-size: 52rpx;
+}
+.playbtn {
+  width: 156rpx;
+  height: 66rpx;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 66rpx;
+  color: #fff;
+  background-color: #29833c;
+  margin: 0;
+}

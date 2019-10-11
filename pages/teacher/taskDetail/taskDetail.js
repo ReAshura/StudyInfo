@@ -5,16 +5,18 @@ Page({
   },
   onLoad: function (e) {
     if (e.courseId) {
+      this.setData({
+        courseId: e.courseId
+      })
       this.getcourseDetail(e.courseId)
     }
   },
   // 获取课程详情
   getcourseDetail(courseId) {
     let data = {
-      resourceType:2,
-      resourceId:courseId,
+      id:courseId
     }
-    app.wxAjax('/course/getResourceStat', data).then(res => {
+    app.wxAjax('/course/getCourseInfo', data).then(res => {
       console.log(res)
     })
   }
