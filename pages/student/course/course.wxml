@@ -1,4 +1,4 @@
 <!--pages/student/course/course.wxml-->
-<search-input />
+<search-input bindmyevent="searchFN" />
 
-<course-list bindmyevent="listFN"/>
+<course-list bindmyevent="listFN" dataList="{{courseList}}" speed="{{true}}"/>

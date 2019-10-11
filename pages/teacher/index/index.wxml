@@ -1,11 +1,11 @@
 <!--pages/teacher/index/index.wxml-->
 <view class='header'>
   <view class='head_left'>
-    <image src='/images/banner.png'></image>
-    <view>李四</view>
+    <image src= "{{userInfo.photo?imgSrc+userInfo.photo:'/images/banner.png'}}"></image>
+    <view>{{userInfo.trueName}}</view>
     <text>老师</text>
   </view>
-  <view>2019年10月1日</view>
+  <view>{{userInfo.academyName}}</view>
 </view>
 
 <view class='navbox'>

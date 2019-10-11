@@ -2,12 +2,14 @@ const app = getApp();
 Page({
   data: {
     courseList:[],
+    userInfo: {}, // 学生信息
+    imgSrc: app.globalData.realmName + '/xuegong/uploads/userphoto/', // 
   },
   onLoad: function (options) {
-    if (!app.globalData.userType) {
-      app.wxAlert('账号信息错误，请删除重试')
-      return false;
-    }
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
+    
     // 获取课程列表
     this.getCourseList();
   },
@@ -25,7 +27,8 @@ Page({
     let type = e.detail.type;// 0 查看全部 1查看列表
     if (type === 1){
       wx.navigateTo({
-        url: '../taskDetail/taskDetail?courseId=' + e.detail.id,
+        //  + e.detail.id
+        url: '../taskDetail/taskDetail?courseId=4028cedd6d336fc4016d338a15570002',
       })
     }else{
       wx.navigateTo({

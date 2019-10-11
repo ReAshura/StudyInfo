@@ -1,4 +1,7 @@
 /* pages/components/swiperbox/swiperbox.wxss */
+swiper {
+  height: 200px;
+}
 .bannerbox view{
   height: 100%;
 }

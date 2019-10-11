@@ -1,7 +1,7 @@
 /* pages/student/index/index.wxss */
 @import '../../../utils/iconfont.wxss';
 .navbox {
-  padding: 40rpx 128rpx;
+  padding: 30rpx 128rpx;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,5 @@
 <!--components/search-input/search-input.wxml-->
 <view class="searchbox">
-  <input placeholder="{{title}}" placeholder-class="placeColor" bindinput='_setText'></input>
+  <input placeholder="{{title}}" placeholder-class="placeColor" bindinput='_setText'  bindconfirm="_searchFN"></input>
   <text class='iconfont search' bindtap='_searchFN'></text>
 </view>

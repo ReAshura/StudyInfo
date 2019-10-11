@@ -7,16 +7,16 @@
 ></video>
 
 <view class="contentbox">
-  <view class="title">进入东南大学注意事项</view>
+  <view class="title">{{videoDetail.name}}</view>
   <view class="timebox">2019.03.11 布置</view>
   <view class="scoresbox">
     <view class="score_left">
       <image src="/images/money.svg"></image>
-      <text>20 分</text>
+      <text>{{videoDetail.point}} 分</text>
     </view>
     <button wx:if="{{userType == 3}}"> 
       <text class="iconfont hostIcon"></text>
-      未完成
+      {{studentObj.data.status == 3?'已完成':'未完成'}}
     </button>
     <button wx:elif="{{userType == 2}}" class='speedStyle'> 
       <text class="iconfont hostIcon"></text>
@@ -24,6 +24,21 @@
     </button>
   </view>
 </view>
+
+<view class="videoList">
+  <block wx:for="{{videoDetail.videoList}}" wx:key="id">
+    <view class="videoItem">
+      <view class="listLeftV">
+        <text class="iconfont play"></text>
+        <view>{{item.name}}</view>
+      </view>
+      <button class="playbtn">观看</button>
+    </view>
+  </block>
+
+</view>
+
+
 
 <view class="studentDetail contentbox" wx:if="{{userType==3}}">
   <view class="tipsBox">
