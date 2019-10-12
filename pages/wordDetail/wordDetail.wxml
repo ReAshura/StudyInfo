@@ -1,15 +1,19 @@
 <!--pages/wordDetail/wordDetail.wxml-->
 <view class="contentbox">
   <view class="title">{{wordDetail.name}}</view>
-  <view class="timebox">xxxx.xx.xx 布置</view>
+  <view class="timebox">{{wordDetail.createDate}} 布置</view>
   <view class="scoresbox">
     <view class="score_left">
       <image src="/images/money.svg"></image>
       <text>{{wordDetail.point}} 分</text>
     </view>
-    <button  wx:if="{{userType == 3}}"> 
-      <text class="iconfont hostIcon"></text>
-      {{studentType.data.status == 3?'已完成':'未完成'}}
+    <button  wx:if="{{userType == 3}}" class="{{studentType.data.status == 3?'succBtn':''}}"> 
+      <block wx:if="{{studentType.data.status == 3}}">
+        <text class="iconfont succIcon"></text> 已完成
+      </block>
+      <block wx:else>
+        <text class="iconfont hostIcon"></text> 未完成
+      </block>
     </button>
     <button wx:elif="{{userType == 2}}" class='speedStyle'> 
       <text class="iconfont hostIcon"></text>

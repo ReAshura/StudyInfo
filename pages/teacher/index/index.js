@@ -27,8 +27,7 @@ Page({
     let type = e.detail.type;// 0 查看全部 1查看列表
     if (type === 1){
       wx.navigateTo({
-        //  + e.detail.id
-        url: '../taskDetail/taskDetail?courseId=4028cedd6d336fc4016d338a15570002',
+        url: '../taskDetail/taskDetail?courseId=' + e.detail.id,
       })
     }else{
       wx.navigateTo({

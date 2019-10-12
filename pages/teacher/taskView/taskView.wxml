@@ -1,5 +1,5 @@
 <!--pages/teacher/taskView/taskView.wxml-->
 <search-input bindmyevent="searchFN"/>
 
-<course-list bind:myevent="monitorFN" searchBtn="{{true}}" tag="{{true}}"/>
+<course-list searchBtn="{{true}}" tag="{{true}}"  bind:myevent="monitorFN"  dataList="{{courseList}}" />
 <!-- http://api.govision.cn/xuegong/api/account/login -->

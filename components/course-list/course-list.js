@@ -1,3 +1,4 @@
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -49,7 +50,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    imgSrc: app.globalData.realmName + '/xuegong/uploads/thumbimage/', // 
   },
 
   /**

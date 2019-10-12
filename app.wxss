@@ -11,6 +11,9 @@ input {
 button {
   border: none;
 }
+button::after {
+  border: none;
+}
 .placeColor {
   color: #858585;
 }

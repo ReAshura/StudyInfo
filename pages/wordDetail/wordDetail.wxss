@@ -67,3 +67,10 @@
   content: '\e6c6';
   color: #717171;
 }
+.scoresbox>.succBtn {
+  background-color: #F3F1E3;
+  color: #717171;
+}
+.succIcon::after{
+  content: '\e6c6';
+}

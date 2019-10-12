@@ -5,6 +5,9 @@ Page({
     network: app.globalData.realmName + '/xuegong/uploads/userphoto/'
   },
   onLoad: function (options) {
+    
+  },
+  onShow(){
     this.getUsetInfo(); // 获取个人信息
   },
   // 获取个人信息

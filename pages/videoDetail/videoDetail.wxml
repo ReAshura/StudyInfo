@@ -1,21 +1,23 @@
 <!--pages/videoDetail/videoDetail.wxml-->
 <!-- https://www.ttnav.com/storage/topimg/20190824/oapVFsIiZnax0I61kk28Be7ux3taXGur1pk5K7Kc.mp4 -->
 <video
- src="https://www.ttnav.com/storage/topimg/20190824/oapVFsIiZnax0I61kk28Be7ux3taXGur1pk5K7Kc.mp4"
+ src="{{currSrc}}"
  muted="{{true}}"
  bindended="endVideo"
+ autoplay="{{autoplay}}"
+ poster="{{videoDetail.thumbImage?imgSrc+videoDetail.thumbImage:''}}"
 ></video>
 
 <view class="contentbox">
   <view class="title">{{videoDetail.name}}</view>
-  <view class="timebox">2019.03.11 布置</view>
+  <view class="timebox">{{videoDetail.createDate}} 布置</view>
   <view class="scoresbox">
     <view class="score_left">
       <image src="/images/money.svg"></image>
       <text>{{videoDetail.point}} 分</text>
     </view>
-    <button wx:if="{{userType == 3}}"> 
-      <text class="iconfont hostIcon"></text>
+    <button wx:if="{{userType == 3}}" class="{{studentObj.data.status == 3?'succBtn':''}}"> 
+      <text class="iconfont"></text>
       {{studentObj.data.status == 3?'已完成':'未完成'}}
     </button>
     <button wx:elif="{{userType == 2}}" class='speedStyle'> 
@@ -32,7 +34,7 @@
         <text class="iconfont play"></text>
         <view>{{item.name}}</view>
       </view>
-      <button class="playbtn">观看</button>
+      <button class="playbtn" data-src="{{item.filePath}}" bindtap="watchFN">观看</button>
     </view>
   </block>
 

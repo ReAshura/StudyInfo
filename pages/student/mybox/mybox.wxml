@@ -11,7 +11,7 @@
 <view class="integralbox">
   <view class="integ_left">
     <image src="/images/money.svg"></image>
-    <view>8000  积分</view>
+    <view>{{myInfo.totalPoint}}  积分</view>
   </view>
   <button bindtap='jumpJF' >积分记录</button>
 </view>

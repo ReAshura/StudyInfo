@@ -15,14 +15,14 @@
     <block wx:for="{{dataList}}" wx:key="id">
       <view class="list_item" catchtap='_itemDetail' data-id='{{item.courseId}}' data-code="{{item.courseCode}}">
          <view class='topbox'>
-          <image src="/images/banner.png"></image>
+          <image src="{{item.courseThumbImage?imgSrc+item.courseThumbImage:'/images/banner.png'}}"></image>
           <view class="listright">
             <view class="item_title">{{item.courseName}}</view>
-            <view class="item_time">2019.03.11 布置</view>
+            <view class="item_time">{{item.coursePublishedDate}} 布置</view>
             <view class="item_icon">
               <view class="item_icon_left">
                 <image src="/images/money.svg"></image>
-                <text>{{item.totalPoint}} 分</text>
+                <text>{{item.point}} 分</text>
               </view>
 
               <button wx:if="{{searchBtn && item.isPublished}}" class='speedStyle'> 
