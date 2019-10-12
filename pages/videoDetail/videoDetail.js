@@ -13,9 +13,11 @@ Page({
     videoDetail:{}, // 资源详情
     studentObj:{}, // 学生的完成情况
     videoSrc: app.globalData.realmName + '/xuegong/uploads/resourcefile/',
+    imgSrc: app.globalData.realmName + '/xuegong/uploads/thumbimage/',
+    currSrc:'', // 当前视频
+    autoplay:false, // 是否自动播放
   },
   onLoad: function (options) {
-    console.log(options)
     this.setData({
       userType: app.globalData.userType,
       resourceId: options.resourceId
@@ -23,15 +25,13 @@ Page({
     // 获取资源信息
     this.getDetail();
     if (this.data.userType == 3) {
-      // 学生端
-      this.actionTimeOut()
       // 学生----获取资源信息
       this.getStudentResource();
     };
     
   },
   onShow: function () {
-    if (this.data.pageEnd && this.data.userType == 3 && this.data.timer){
+    if (this.data.pageEnd && this.data.userType == 3 && this.data.studentObj.data.status !== 3){
       this.setData({
         timer: setInterval(this.dsqFN, 1000)
       })
@@ -52,9 +52,15 @@ Page({
       resourceId: this.data.resourceId
     }
     app.wxAjax('/learning/getUserResource', data).then(res=>{
-      this.setData({
-        studentObj:res
-      })
+      this.setData({ studentObj:res })
+      if (res.data.status !== 3) {
+        // 未完成时 开始倒计时
+        this.actionTimeOut(res.data.finishedTime)
+      } else {
+        this.setData({
+          timeStr: '已完成'
+        })
+      }
     })
   },
   // 视频播放完毕出发
@@ -64,11 +70,11 @@ Page({
     })
   },
   // 开始倒计时
-  actionTimeOut(){
+  actionTimeOut(ms){
     let isTime = new Date().setHours(0, 0, 0, 0);
     this.setData({
       startTime: isTime,
-      setTime: isTime + (1 * 60000)
+      setTime: isTime + (ms * 60000)
     })
     this.setData({
       timer: setInterval(this.dsqFN, 1000)
@@ -82,8 +88,29 @@ Page({
       timeStr: this.startTime(isTime)
     })
     if (this.data.setTime <= this.data.startTime) {
-      clearInterval(this.data.timer)
+      clearInterval(this.data.timer);
+      // 时间播放结束
+      this.endTimeOut();
     }
+  },
+  // 结束倒计时
+  endTimeOut() {
+    let data = {
+      userId: app.globalData.userInfo.id,
+      resourceId: this.data.resourceId,
+      status: 3
+    }
+    app.wxAjax('/learning/updateUserCourseLearningLogStatus', data, 'POST').then(res => {
+      var pages = getCurrentPages();
+      var page1 = pages[pages.length - 2];//上一页
+      var page2 = pages[pages.length - 3];//上两页
+      if (typeof page1.getcourseDetail === 'function') page1.getcourseDetail();
+      if (typeof page2.getcourseList === 'function') page2.getcourseList();
+      this.setData({
+        timeStr: '已完成',
+        ['studentObj.data.status']: 3
+      })
+    })
   },
   // 将时间转化成字符串
   startTime(time) {
@@ -96,22 +123,22 @@ Page({
       denotype: e.currentTarget.dataset.id
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  // 点击观看
+  watchFN(e){
+    this.setData({
+      currSrc: this.data.videoSrc + e.currentTarget.dataset.src,
+      autoplay:true
+    })
+  },
   onReady: function () {
     this.setData({
       pageEnd:true
     })
   },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
     if (this.data.userType == 3 && this.data.timer) {
       clearInterval(this.data.timer)
     }
-    
   },
   onUnload: function () {
     if (this.data.userType == 3 && this.data.timer) {

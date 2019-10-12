@@ -9,18 +9,18 @@ Page({
       this.setData({
         courseId: e.courseId
       })
-      this.getcourseDetail(e.courseId)
+      this.getcourseDetail()
     }
   },
   // 获取课程详情
-  getcourseDetail(courseId){
+  getcourseDetail(){
     let data = {
       userId: app.globalData.userInfo.id,
       resourceType:0,
       status:0,
       start:1,
       limit:-1,
-      courseId,
+      courseId: this.data.courseId,
     }
     app.wxAjax('/learning/getUserCourseLearningLog', data).then(res=>{
       this.setData({

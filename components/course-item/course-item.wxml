@@ -6,7 +6,7 @@
       <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail?resourceId={{item.id}}" wx:if="{{item.resourceType == 2}}">
         <view class="wordtitle">{{item.name}}</view>
         <view class="word_bottom">
-          <view class="item_time">2019.03.11 布置</view>
+          <view class="item_time">{{item.createDate}} 布置</view>
           <view class="item_icon_left">
             <image src="/images/money.svg"></image>
             <text>{{item.point}} 分</text>

@@ -3,45 +3,12 @@
   <view>积分来源</view>
   <view>积分数量</view>
 </view>
-<view class='listItem'>
-  <view>如何与同学建立关系</view>
-  <view class='listleft'>
-    <image src='/images/money.svg'></image>
-    <text> + 20分</text>
+<block wx:for="{{dataList}}" wx:key="courseId">
+  <view class='listItem'>
+    <view>{{item.resourceName}}</view>
+    <view class='listleft'>
+      <image src='/images/money.svg'></image>
+      <text> + {{item.point}}分</text>
+    </view>
   </view>
-</view>
-<view class='listItem'>
-  <view>如何与同学建立关系</view>
-  <view class='listleft'>
-    <image src='/images/money.svg'></image>
-    <text> + 20分</text>
-  </view>
-</view>
-<view class='listItem'>
-  <view>如何与同学建立关系</view>
-  <view class='listleft'>
-    <image src='/images/money.svg'></image>
-    <text> + 20分</text>
-  </view>
-</view>
-<view class='listItem'>
-  <view>如何与同学建立关系</view>
-  <view class='listleft'>
-    <image src='/images/money.svg'></image>
-    <text> + 20分</text>
-  </view>
-</view>
-<view class='listItem'>
-  <view>如何与同学建立关系</view>
-  <view class='listleft'>
-    <image src='/images/money.svg'></image>
-    <text> + 20分</text>
-  </view>
-</view>
-<view class='listItem'>
-  <view>如何与同学建立关系</view>
-  <view class='listleft'>
-    <image src='/images/money.svg'></image>
-    <text> + 20分</text>
-  </view>
-</view>
+</block>

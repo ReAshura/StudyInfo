@@ -25,8 +25,6 @@ Page({
     if (this.data.userType == 3) {
       // 学生 获取学生的资料
       this.getStudentDetail();
-      // 学生端
-      this.actionTimeOut()
     }
   },
   // 获取资源信息
@@ -44,20 +42,45 @@ Page({
       resourceId: this.data.resourceId
     }
     app.wxAjax('/learning/getUserResource', data).then(res => {
-      this.setData({
-        studentType: res
-      })
+      this.setData({studentType: res})
+      if (res.data.status !== 3){
+        // 未完成时 开始倒计时
+        this.actionTimeOut(res.data.finishedTime)
+      }else{
+        this.setData({
+          timeStr:'已完成'
+        })
+      }
     })
   },
   // 开始倒计时
-  actionTimeOut() {
+  actionTimeOut(ms) {
     let isTime = new Date().setHours(0, 0, 0, 0);
     this.setData({
       startTime: isTime,
-      setTime: isTime + (12 * 60000)
+      setTime: isTime + (ms * 1000)
     })
     this.setData({
       timer: setInterval(this.dsqFN, 1000)
+    })
+  },
+  // 结束倒计时
+  endTimeOut(){
+    let data = {
+      userId: app.globalData.userInfo.id,
+      resourceId: this.data.resourceId,
+      status: 3
+    }
+    app.wxAjax('/learning/updateUserCourseLearningLogStatus', data,'POST').then(res=>{
+      var pages = getCurrentPages();
+      var page1 = pages[pages.length - 2];//上一页
+      var page2 = pages[pages.length - 3];//上两页
+      if (typeof page1.getcourseDetail === 'function') page1.getcourseDetail();
+      if (typeof page2.getcourseList === 'function') page2.getcourseList();
+      this.setData({
+        timeStr: '已完成',
+        ['studentType.data.status']:3
+      })
     })
   },
   // 定时器内使用的函数体
@@ -68,6 +91,8 @@ Page({
       timeStr: this.startTime(isTime)
     })
     if (this.data.setTime <= this.data.startTime) {
+      // 发送完成信息
+      this.endTimeOut()
       clearInterval(this.data.timer)
     }
   },
@@ -76,17 +101,17 @@ Page({
     const Time = new Date(time);
     return `${Time.getHours() >= 10 ? Time.getHours() : '0' + Time.getHours()} : ${Time.getMinutes() >= 10 ? Time.getMinutes() : '0' + Time.getMinutes()} : ${Time.getSeconds() >= 10 ? Time.getSeconds() : '0' + Time.getSeconds()}`
   },
-  onReady: function () {
-    this.setData({
-      pageEnd: true
-    })
-  },
   onShow: function () {
-    if (this.data.pageEnd && this.data.userType == 3 && this.data.timer) {
+    if (this.data.pageEnd && this.data.userType == 3 && this.data.studentType.data.status !== 3) {
       this.setData({
         timer: setInterval(this.dsqFN, 1000)
       })
     }
+  },
+  onReady: function () {
+    this.setData({
+      pageEnd: true
+    })
   },
   onHide: function () {
     if (this.data.userType == 3 && this.data.timer) {

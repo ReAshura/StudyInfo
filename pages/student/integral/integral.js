@@ -17,7 +17,9 @@ Page({
       limit:-1
     }
     app.wxAjax('/learning/studentPointList', data).then(res=>{
-      console.log(res)
+      this.setData({
+        dataList: res.dataList
+      })
     })
   }
 })

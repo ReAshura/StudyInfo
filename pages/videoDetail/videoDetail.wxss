@@ -147,7 +147,8 @@ video {
   background-color: #F3F1E3;
   color: #717171;
 }
-.speedStyle>.hostIcon::after {
+
+.hostIcon::after {
   content: '\e6c6';
   color: #717171;
 }
@@ -170,8 +171,9 @@ video {
   align-items: center;
 }
 .listLeftV>view {
-  margin-left: 26rpx;
-  font-size: 30rpx;
+  width: 80%;
+  margin-left: 22rpx;
+  font-size: 26rpx;
 }
 .play::after {
   content: '\e603';
@@ -187,4 +189,16 @@ video {
   color: #fff;
   background-color: #29833c;
   margin: 0;
+}
+.scoresbox>.succBtn {
+  background-color: #F3F1E3;
+  color: #717171;
+}
+.scoresbox>button>text::after {
+  content: '\e628';
+  color: #fff;
+}
+.scoresbox>.succBtn>text::after {
+  content: '\e6c6';
+  color: #717171;
 }

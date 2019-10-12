@@ -75,6 +75,7 @@
 .item_icon_left {
   display: flex;
   align-items: center;
+  width: 200rpx;
 }
 .item_icon_left>image {
   width: 46rpx;
@@ -102,9 +103,6 @@
 .item_icon>.speedStyle {
   background-color: #F3F1E3;
   color: #717171;
-  margin: 0;
-  display: block;
-  margin-left: 110rpx;
 }
 .speedStyle>.hostIcon::after {
   content: '\e6c6';
