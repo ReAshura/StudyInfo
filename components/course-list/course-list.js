@@ -68,9 +68,9 @@ Component({
     _itemDetail(e){
       let myEventDetail = {
         'type': 1, //0查看全部 1 点击列表
-        'id': e.currentTarget.dataset.id
+        'id': e.currentTarget.dataset.id,
+        'index': e.currentTarget.dataset.index
       }
-      
       this.triggerEvent('myevent', myEventDetail)
     }
   }

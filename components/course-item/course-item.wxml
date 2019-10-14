@@ -13,7 +13,7 @@
           </view>
           <block wx:if="{{searchBtn}}">
             <button class='speedStyle'> 
-              <text class="iconfont hostIcon"></text> 12人完成
+              <text class="iconfont hostIcon"></text> {{item.finishedStudentCount}}人完成
             </button>
           </block>
           <block wx:elif="{{studentType}}">

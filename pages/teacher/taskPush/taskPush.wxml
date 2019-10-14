@@ -18,6 +18,6 @@
     <view class='tagBox'>
       <view class='tagitem' wx:for="{{mokeList}}" wx:key="id" catchtap='addTag' data-id='{{index}}'>{{item.name}}</view>
     </view>
-    <button class='babytjBtn' catchtap='closepop'>确认</button>
+    <button class='babytjBtn' catchtap='pushCurse'>确认</button>
   </view>
 </view>

@@ -56,12 +56,19 @@
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
-  margin-right: 52rpx;
+  margin-right: 32rpx;
+}
+.item_left>view{
+  width: 180rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .item_right {
-  width: 380rpx;
+  width: 370rpx;
   font-size: 32rpx;
   line-height:46rpx;
+  text-align: center;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -13,35 +13,16 @@
   </view>
 
   <view class="list_cont">
-    <view class="list_item" catchtap='_itemDetail' data-id='1'>
-      <view class='item_left'>
-        <image src='/images/banner.png'></image>
-        <view>张三</view>
+    <block wx:for="{{dataList}}" wx:key="studentId">
+      <view class="list_item" catchtap='_itemDetail' data-id='{{item.studentId}}'>
+        <view class='item_left'>
+          <image src="{{item.photo?imgSrc+item.photo:'/images/demo.svg'}}"></image>
+          <view>{{item.studentName}}</view>
+        </view>
+        <view class='item_right'>
+          {{item.courseName}}
+        </view>
       </view>
-      <view class='item_right'>
-        东南大学在井冈山大仓村建立大学生社会实践
-      </view>
-    </view>
-
-    <view class="list_item" catchtap='_itemDetail' data-id='1'>
-      <view class='item_left'>
-        <image src='/images/banner.png'></image>
-        <view>张三</view>
-      </view>
-      <view class='item_right'>
-        东南大学在井冈山大仓村建立大学生社会实践
-      </view>
-    </view>
-
-    <view class="list_item" catchtap='_itemDetail' data-id='1'>
-      <view class='item_left'>
-        <image src='/images/banner.png'></image>
-        <view>张三</view>
-      </view>
-      <view class='item_right'>
-        东南大学在井冈山大仓村建立大学生社会实践
-      </view>
-    </view>
-
+    </block>
   </view>
 </view>
