@@ -1,66 +1,40 @@
 // pages/teacher/myStudent/myStudent.js
+const app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    searchStr:'', // 
+    page:0, // 分页
+    limit:10, // 页面容量
+    isLimit:0, // 当前获取了多少数据
+    studentList:[], // 学生列表
+    imgSrc: app.globalData.realmName + '/xuegong/uploads/userphoto/',
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-
+    // 获取老师所有的学生
+    this.getMyStudent();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //上拉更新
+  onReachBottom() {
+    if (this.data.isLimit === this.data.limit) {
+      this.setData({
+        page: (this.data.page + this.data.limit)
+      })
+      this.getMyStudent();
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 获取老师所有的学生
+  getMyStudent(){
+    let data = {
+      studentName:this.data.searchStr,
+      teacherId: app.globalData.userInfo.id,
+      start: this.data.page,
+      limit: this.data.limit
+    }
+    app.wxAjax('/account/studentList',data).then(res=>{
+      this.setData({
+        studentList: this.data.studentList.concat(res.dataList),
+        isLimit: res.dataList.length
+      })
+    })
   }
 })

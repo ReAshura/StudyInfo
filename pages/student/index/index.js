@@ -16,7 +16,8 @@ Page({
   getcourseList(){
     let data = {
       courseName: this.data.searchStr,
-      userId: app.globalData.userInfo.id
+      userId: app.globalData.userInfo.id,
+      status:0
     }
     app.wxAjax('/learning/userCourseInfoList', data).then(res=>{
       this.setData({

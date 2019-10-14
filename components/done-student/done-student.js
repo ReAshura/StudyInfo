@@ -1,4 +1,5 @@
 // components/done-student/done-student.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -11,6 +12,10 @@ Component({
     titleShow: {
       type: Boolean,
       value: false
+    },
+    dataList:{
+      type: Array,
+      value: []
     }
   },
 
@@ -18,7 +23,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    imgSrc: app.globalData.realmName + '/xuegong/uploads/userphoto/',
   },
 
   /**

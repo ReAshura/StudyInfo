@@ -1,41 +1,24 @@
 <!--pages/teacher/seeInfo/seeInfo.wxml-->
 <view class="myheadbox">
   <view class="myimgbox">
-    <image src="/images/demo.svg"></image>
-    <view>张三</view>
+    <image src="{{studentInfo.photo?imgSrc+studentInfo.photo:'/images/demo.svg'}}"></image>
+    <view>{{studentInfo.trueName}}</view>
   </view>
-  <view class="myxuehao">学号:15080930125</view>
+  <view class="myxuehao">学号:{{studentInfo.userName}}</view>
 </view>
 
 <view class="integralbox">
   <view class="integ_left">
     <image src="/images/money.svg"></image>
-    <view>8000  积分</view>
+    <view>{{studentInfo.totalPoint}}  积分</view>
   </view>
 </view>
 
 <view class='tagboxTop'>
-  <!-- <view class='tagTop'>
 
-    <view class='tagitem'>
-      <text>自定义标签1</text>
-      <icon type="clear" size="18" color="#ff5a00"/>
-    </view>
-
-    <view class='tagitem'>
-      <text>测试一个超长的标签名字</text>
-      <icon type="clear" size="18" color="#ff5a00"/>
-    </view>
-
-    <view class='tagitem'>
-      <text>标签名可以自己定义</text>
-      <icon type="clear" size="18" color="#ff5a00"/>
-    </view>
-
-  </view> -->
   <view class='activBox'>
       <view class='activitem' wx:for="{{currList}}" wx:key="id">
-        <icon type="clear" size="18" color='#ff5a00' bindtap='removeItem' data-id="{{index}}"/>
+        <icon type="clear" size="18" color='#ff5a00' bindtap='removeTgaFN' data-id="{{item.id}}"/>
         <view>{{item.name}}</view>
       </view>
     </view>
@@ -48,14 +31,13 @@
 
 <view class='speedBox'>
   <view class='selectTi'>
-    <view class="{{type===0?'activ':''}}" data-id='{{0}}' bindtap='tasktypeFN'>已完成任务</view>
+    <view class="{{type===3?'activ':''}}" data-id='{{3}}' bindtap='tasktypeFN'>已完成任务</view>
     <view class="{{type===1?'activ':''}}" data-id='{{1}}' bindtap='tasktypeFN'>未完成任务</view>
   </view>
 </view>
 
 <view class="list_cont">
-  <course-list bindmyevent="courseEvent"/>
-
+  <course-list bindmyevent="courseEvent" dataList="{{courseList}}"/>
 </view>
 
 <view class='popup' wx:if="{{popbool}}" bindtap='closepop'>
@@ -74,7 +56,7 @@
     <view class='tagBox'>
       <view class='tagitem' wx:for="{{mokeList}}" wx:key="id" catchtap='addTag' data-id='{{index}}'>{{item.name}}</view>
     </view>
-    <button class='babytjBtn' catchtap='closepop'>确认</button>
+    <!-- <button class='babytjBtn' catchtap='closepop'>确认</button> -->
   </view>
 </view>
 

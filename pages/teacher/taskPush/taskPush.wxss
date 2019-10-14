@@ -51,6 +51,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  max-height: 500rpx;
+  overflow-y: auto;
 }
 .tagitem {
   width: 48%;

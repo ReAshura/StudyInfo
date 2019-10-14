@@ -207,7 +207,7 @@
 
 .popbox {
   width: 90%;
-  padding: 30rpx 20rpx 260rpx;
+  padding: 30rpx 20rpx 20rpx;
   box-sizing: border-box;
   background-color: #fff;
   margin: 0 auto;
@@ -245,6 +245,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  min-height: 360rpx;
+  max-height: 400rpx;
+  overflow-y: auto;
 }
 .tagitem {
   width: 48%;
