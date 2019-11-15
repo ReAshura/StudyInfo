@@ -41,10 +41,16 @@ Page({
       data.photo = this.data.prevMyInfo.photo
       app.wxAjax('/account/updateUser',data,'POST').then(res=>{
         if (res.result){
-          let pages = getCurrentPages();
-          let pageprev = pages[pages.length - 2];
-          pageprev.getUsetInfo();
-          app.wxAlert('上传成功')
+          setTimeout((res) => {
+            wx.navigateBack({
+              delta: 1
+            })
+          }, 1500)
+          wx.showToast({
+            title: '保存成功...',
+            mask: true,
+            duration: 1500
+          })
         }else{
           app.wxAlert(res.message)
         }
@@ -58,10 +64,16 @@ Page({
         success(res) {
           res = JSON.parse(res.data)
           if (res.result) {
-            let pages = getCurrentPages();
-            let pageprev = pages[pages.length - 2];
-            pageprev.getUsetInfo();
-            app.wxAlert('上传成功')
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1
+              })
+            },1500)
+            wx.showToast({
+              title: '保存成功...',
+              mask: true,
+              duration: 1500
+            })
           } else {
             app.wxAlert(res.message)
           }

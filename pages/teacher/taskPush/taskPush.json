@@ -1,4 +1,5 @@
 {
+  "onReachBottomDistance": 50,
   "usingComponents": {
     "course-list": "/components/course-list/course-list",
     "search-input": "/components/search-input/search-input"

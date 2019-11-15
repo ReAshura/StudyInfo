@@ -72,6 +72,9 @@ Page({
           }
           app.wxAjax('/account/deleteStudentTag',data,'POST').then(res=>{
             this.getStudenTag();
+            this.setData({
+              popbool:false
+            })
           })
         }
       }
@@ -101,8 +104,7 @@ Page({
   getStudentStatus(){
     let data = {
       userId: this.data.studentid,
-      status: this.data.type,
-      status:0
+      status: this.data.type
     }
     app.wxAjax('/learning/userCourseInfoList', data).then(res=>{
       this.setData({

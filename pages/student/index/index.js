@@ -44,7 +44,7 @@ Page({
         resourceType: type,
         status:0,
         start:1,
-        limit:10
+        limit:3
       }
       videoList.push(app.wxAjax('/course/getUserCourseLearningLog', data))
     }

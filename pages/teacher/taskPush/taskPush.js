@@ -1,11 +1,16 @@
 const app = getApp();
 Page({
   data: {
+    courseList:[], // 课程列表
     popbool:false,
     mokeList: [],
     currList:[],// 当前选中的标签
     searchText:'', // 搜索内容
     currIndex:null , // 当前课程下标
+    limit: 10, // 页面容量
+    isLimit: 0, // 当前获取了多少数据
+    page: 0, // 分页
+    ajaxEnd: false, // 请求是否完成 ， 只为了UI切换
   },
   onLoad: function (options) {
     // 获取课程列表
@@ -13,11 +18,22 @@ Page({
     // 获取标签列表
     this.getTagList();
   },
+  //上拉更新
+  onReachBottom() {
+    if (this.data.isLimit === this.data.limit) {
+      this.setData({
+        page: (this.data.page + this.data.limit)
+      })
+      this.getCourseList();
+    }
+  },
   // 获取课程列表
   getCourseList() {
-    app.wxAjax('/course/courseInfoList', { code: '', name: this.data.searchText, teacherId: app.globalData.userInfo.id, start: 1, limit: -1 }).then(res => {
+    app.wxAjax('/course/courseInfoList', { code: '', name: this.data.searchText, teacherId: app.globalData.userInfo.id, start: this.data.page, limit: this.data.limit }).then(res => {
       this.setData({
-        courseList: res.dataList
+        courseList: this.data.courseList.concat(res.dataList),
+        isLimit: res.dataList.length,
+        ajaxEnd:true
       })
     })
   },
@@ -104,7 +120,9 @@ Page({
   // 监听到点击搜索按钮
   searchFN(e) {
     this.setData({
-      searchText: e.detail.text
+      searchText: e.detail.text,
+      page: 0, // 分页
+      courseList: []
     })
     // 获取课程列表
     this.getCourseList();

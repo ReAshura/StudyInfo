@@ -17,7 +17,7 @@
     </button>
     <button wx:elif="{{userType == 2}}" class='speedStyle'> 
       <text class="iconfont hostIcon"></text>
-      12人完成
+      {{wordDetail.finishedCount}}人完成
     </button>
   </view>
   <view class="overTime">剩余时间： {{timeStr}}</view>

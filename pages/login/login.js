@@ -4,8 +4,8 @@ Page({
   mixins:[require('../../Mixins.js')],
   data: {
     type: 1, // 1代表学生,0代表老师
-    username:'teacher', // 输入的账号
-    password:'teacher', // 输入的密码
+    username:'001', // 输入的账号
+    password:'123', // 输入的密码
   },
   onLoad: function (options) {
     

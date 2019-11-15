@@ -19,7 +19,8 @@
     "pages/student/course/course",
     "pages/courseList/courseList",
     "pages/teacher/taskDetail/taskDetail",
-    "pages/student/courseDone/courseDone"
+    "pages/student/courseDone/courseDone",
+    "pages/webDetail/webDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

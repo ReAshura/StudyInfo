@@ -1,4 +1,11 @@
 <!-- 本意是想当做公用页面，但是发现条件不允许，所以在这里留作学生端的课程列表页面 -->
-<search-input title="请输入要查找的教材"/>
-
-<course-item dataList="{{dataList}}" studentType="{{true}}" /> 
+<search-input title="请输入要查找的教材" bindmyevent="searchFN"/>
+<block wx:if="{{dataList.length>0 || !ajaxEnd}}">
+  <course-item dataList="{{dataList}}" studentType="{{true}}" /> 
+</block>
+<block wx:else>
+  <view class="nodata">
+    <image src="/images/nocourse.svg"></image>
+    <view>暂无教材</view>
+  </view>
+</block>

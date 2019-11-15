@@ -169,9 +169,9 @@ video {
 .listLeftV {
   display: flex;
   align-items: center;
+  width: 76%;
 }
 .listLeftV>view {
-  width: 80%;
   margin-left: 22rpx;
   font-size: 26rpx;
 }

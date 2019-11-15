@@ -2,6 +2,8 @@ const app = getApp();
 Page({
   data: {
     searchStr:'',  // 搜索的内容
+    courseList:[], // 数据
+    ajaxEnd: false, // 请求是否完成 ， 只为了UI切换
   },
   onLoad: function (options) {
     // 获取学生所学课程列表
@@ -16,7 +18,8 @@ Page({
     }
     app.wxAjax('/learning/userCourseInfoList', data).then(res => {
       this.setData({
-        courseList: res.dataList
+        courseList: res.dataList,
+        ajaxEnd:true
       })
     })
   },
