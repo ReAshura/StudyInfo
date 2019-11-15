@@ -48,7 +48,8 @@
     </view>
     <view class='activBox'>
       <view class='activitem' wx:for="{{currList}}" wx:key="id">
-        <icon type="clear" size="18" color='#ff5a00' bindtap='removeItem' data-id="{{index}}"/>
+        <!-- removeItem data-id="{{index}}" -->
+        <icon type="clear" size="18" color='#ff5a00' bindtap='removeTgaFN' data-id="{{item.id}}"/>
         <view>{{item.name}}</view>
       </view>
     </view>

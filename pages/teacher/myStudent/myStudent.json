@@ -1,3 +1,6 @@
 {
-  "onReachBottomDistance": 50
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "search-input": "/components/search-input/search-input"
+  }
 }

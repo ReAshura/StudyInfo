@@ -245,7 +245,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  min-height: 360rpx;
+  /* min-height: 360rpx; */
   max-height: 400rpx;
   overflow-y: auto;
 }

@@ -22,7 +22,7 @@
     </button>
     <button wx:elif="{{userType == 2}}" class='speedStyle'> 
       <text class="iconfont hostIcon"></text>
-      12人完成
+      {{videoDetail.finishedCount}}人完成
     </button>
   </view>
 </view>
@@ -54,7 +54,7 @@
     </view>
   </view>
 </view>
-<view wx:elif="{{userType == 2}}">
+<!-- <view wx:elif="{{userType == 2}}">
   <view class='speedBox'>
     <view class='selectTi'>
       <view class="{{denotype===0?'activ':''}}" data-id='{{0}}' bindtap='tasktypeFN'>已完成任务</view>
@@ -63,11 +63,11 @@
   </view>
 
   <view class="list_cont">
-    <!-- url='../teacher/seeInfo/seeInfo' -->
+    
     <view class='s_item' >
       <view class='item_info t1'>
         <image src='/images/demo.svg'></image>
-        <view>张三</view>
+        <view url='../teacher/seeInfo/seeInfo'>张三</view>
       </view>
       <view class='t2'>
         <text>49</text>
@@ -92,4 +92,4 @@
 
   </view>
 
-</view>
+</view> -->

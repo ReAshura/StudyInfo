@@ -17,7 +17,7 @@ Page({
   },
   // 获取课程列表
   getCourseList(){
-    app.wxAjax('/course/courseInfoList', { code: '', name: '', teacherId: app.globalData.userInfo.id, start: 1, limit:-1}).then(res=>{
+    app.wxAjax('/course/courseInfoList', { code: '', name: '', teacherId: app.globalData.userInfo.id, start: 1, limit:3}).then(res=>{
       this.setData({
         courseList: res.dataList
       })

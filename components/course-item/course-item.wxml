@@ -13,7 +13,7 @@
           </view>
           <block wx:if="{{searchBtn}}">
             <button class='speedStyle'> 
-              <text class="iconfont hostIcon"></text> {{item.finishedStudentCount}}人完成
+              <text class="iconfont hostIcon"></text> {{item.finishedCount}}人完成
             </button>
           </block>
           <block wx:elif="{{studentType}}">
@@ -40,7 +40,7 @@
         <image src="{{item.thumbImage?imgUrl+item.thumbImage:'/images/banner.png'}}" ></image>
         <view class="listright">
           <view class="item_title">{{item.name}}</view>
-          <view class="item_time">2019.03.11 布置</view>
+          <view class="item_time">{{item.createDate}} 布置</view>
           <view class="item_icon">
             <view class="item_icon_left">
               <image src="/images/money.svg"></image>
@@ -48,7 +48,7 @@
             </view>
             <block wx:if="{{searchBtn}}">
               <button class='speedStyle'> 
-                <text class="iconfont hostIcon"></text> 12人完成
+                <text class="iconfont hostIcon"></text> {{item.finishedCount}}人完成
               </button>
             </block>
             <block wx:elif="{{studentType}}">
@@ -71,6 +71,40 @@
           </view>
         </view>
       </navigator>
+
+      <navigator class="list_item crearcolumn" url="/pages/webDetail/webDetail?resourceId={{item.id}}" wx:elif="{{item.resourceType == 3}}">
+        <view class="wordtitle">{{item.name}}</view>
+        <view class="word_bottom">
+          <view class="item_time">{{item.createDate}} 布置</view>
+          <view class="item_icon_left">
+            <image src="/images/money.svg"></image>
+            <text>{{item.point}} 分</text>
+          </view>
+          <block wx:if="{{searchBtn}}">
+            <button class='speedStyle'> 
+              <text class="iconfont hostIcon"></text> {{item.finishedCount}}人完成
+            </button>
+          </block>
+          <block wx:elif="{{studentType}}">
+            <button class='speedStyle' wx:if="{{item.status == 3}}"> 
+              <text class="iconfont hostIcon"></text> 已完成
+            </button>
+            <button class='speedStyle' wx:elif="{{item.status == 2}}"> 
+              学习中
+            </button>
+            <button wx:else> 
+              <text class="iconfont hostIcon"></text> 未完成
+            </button>
+          </block>
+          <button wx:elif="{{pushBtn}}"> 
+            发布
+          </button>
+          <block wx:else>
+            
+          </block>
+        </view>
+      </navigator>
+      
     </block>
 
 

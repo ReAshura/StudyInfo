@@ -7,26 +7,27 @@ App({
   globalData: {
     userType: 2,// 用户状态 2是教师 3是学生 ''是初始状态
     userInfo: {}, // 用户信息
-    URL:'http://api.govision.cn/xuegong/api',
-    realmName:'http://api.govision.cn',
-    BANNA:'http://api.govision.cn/xuegong/crouselimage/',
-    IMGURL:'http://api.govision.cn/xuegong/uploads/userphoto/',
+    URL:'http://xgbxcx.seu.edu.cn/xuegong/api',
+    realmName:'http://xgbxcx.seu.edu.cn',
+    BANNA:'http://xgbxcx.seu.edu.cn/xuegong/crouselimage/',
+    IMGURL:'http://xgbxcx.seu.edu.cn/xuegong/uploads/userphoto/',
     userName:'',// 用户账号
     password:'',// 用户密码
   },
   // 封装 alert 弹出框
-  wxAlert(str){
+  wxAlert(str, success=()=>{}){
     wx.showModal({
       title: '提示',
       content: str,
       showCancel:false,
       confirmText:'知道啦~',
-      confirmColor:'#29833c'
+      confirmColor:'#29833c',
+      success
     })
   },
   // 封装请求
   wxAjax(url, data = {}, method="GET",){
-    wx.showLoading({ title: '拼命加载中....' });
+    wx.showLoading({ title: '拼命加载中....', mask:true });
     let header = method !== 'GET' ? 'application/x-www-form-urlencoded' : 'application/json'
     return new Promise((resolve,reject)=>{
       wx.request({

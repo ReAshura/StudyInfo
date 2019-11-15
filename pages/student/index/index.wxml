@@ -1,5 +1,5 @@
 <!--pages/student/index/index.wxml-->
-<search-input bindmyevent="searchFN"/>
+<!-- <search-input bindmyevent="searchFN"/> -->
 
 <swiperbox bannerList="{{bannerList}}"></swiperbox>
 

@@ -1,3 +1,10 @@
-<search-input title="请输入要查找的教材"/>
-
-<course-item searchBtn="{{true}}" dataList="{{dataList}}"/>
+<search-input title="请输入要查找的教材" bindmyevent="searchFN"/>
+<block wx:if="{{dataList.length>0 || !ajaxEnd}}">
+  <course-item searchBtn="{{true}}" dataList="{{dataList}}"/>
+</block>
+<block wx:else>
+  <view class="nodata">
+    <image src="/images/nocourse.svg"></image>
+    <view>暂无教材</view>
+  </view>
+</block>

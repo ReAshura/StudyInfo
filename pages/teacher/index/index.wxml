@@ -13,13 +13,13 @@
     <view class='item_blue'>
       <text class='iconfont'></text>
     </view>
-    <text>发布任务</text>
+    <text>发布课程</text>
   </navigator>
   <navigator url="../taskView/taskView" class='nav_item'>
     <view class='item_green'>
       <text class='iconfont'></text>
     </view>
-    <text>查看任务</text>
+    <text>查看课程</text>
   </navigator>
   <navigator url="../myStudent/myStudent" class='nav_item'>
     <view class='item_orange'>
@@ -31,7 +31,7 @@
 
 <view class="line"></view>
 
-<course-list bind:myevent="monitorFN" searchBtn="{{true}}" titleText="最近发布的任务"  titleShow="{{true}}" runAllList="{{true}}" tag="{{true}}" dataList="{{courseList}}"></course-list>
+<course-list bind:myevent="monitorFN" searchBtn="{{true}}" titleText="最近发布的课程"  titleShow="{{true}}" runAllList="{{true}}" tag="{{true}}" dataList="{{courseList}}"></course-list>
 
 <view class="line"></view>
 <!-- latelyStudent -->

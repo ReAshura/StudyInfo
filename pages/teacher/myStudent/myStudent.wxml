@@ -1,4 +1,5 @@
 <!--pages/teacher/myStudent/myStudent.wxml-->
+<search-input bindmyevent="searchFN" title="请输入要查找的学生姓名"/>
 <view class='header'>
   <view class='t1'>学生姓名</view>
   <view class='t2'>当前积分</view>

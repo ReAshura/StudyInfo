@@ -36,5 +36,16 @@ Page({
         isLimit: res.dataList.length
       })
     })
-  }
+  },
+  // 监听到点击搜索按钮
+  searchFN(e) {
+    this.setData({
+      searchStr: e.detail.text,
+      page:0,
+      studentList:[]
+    })
+    console.log(this.data.searchStr)
+    // 获取老师所有的学生
+    this.getMyStudent();
+  },
 })

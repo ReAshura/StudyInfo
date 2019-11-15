@@ -1,4 +1,11 @@
 <!--pages/student/courseDone/courseDone.wxml-->
 <search-input bindmyevent="searchFN"/>
-
-<course-list bindmyevent="listFN" dataList="{{courseList}}" speed="{{true}}"/> 
+<block wx:if="{{courseList.length>0 || !ajaxEnd}}">
+  <course-list bindmyevent="listFN" dataList="{{courseList}}" speed="{{true}}"/> 
+</block>
+<block wx:else>
+  <view class="nodata">
+    <image src="/images/nocourse.svg"></image>
+    <view>暂无课程</view>
+  </view>
+</block>

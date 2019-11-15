@@ -1,5 +1,11 @@
 <!--pages/teacher/taskView/taskView.wxml-->
 <search-input bindmyevent="searchFN"/>
-
-<course-list searchBtn="{{true}}" tag="{{true}}"  bind:myevent="monitorFN"  dataList="{{courseList}}" />
-<!-- http://api.govision.cn/xuegong/api/account/login -->
+<block wx:if="{{courseList.length>0 || !ajaxEnd}}">
+  <course-list searchBtn="{{true}}" tag="{{true}}"  bind:myevent="monitorFN"  dataList="{{courseList}}" />
+</block>
+<block wx:else>
+  <view class="nodata">
+    <image src="/images/nocourse.svg"></image>
+    <view>暂无教材</view>
+  </view>
+</block>

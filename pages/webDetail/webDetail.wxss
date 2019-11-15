@@ -1,0 +1,76 @@
+/* pages/webDetail/webDetail.wxss *//* pages/wordDetail/wordDetail.wxss */
+@import '../../utils/iconfont.wxss';
+.contentbox {
+  padding: 42rpx 32rpx;
+  box-sizing: border-box;
+}
+.overTime {
+  margin-top: 8rpx;
+}
+.title {
+  font-size: 36rpx;
+}
+.timebox {
+  color: #adadad;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}
+.scoresbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.score_left {
+  display: flex;
+  align-items: center;
+  width: 220rpx;
+}
+.score_left>image {
+  width: 46rpx;
+  height: 46rpx;
+}
+.score_left>text {
+  color: #d72020;
+  font-size: 26rpx;
+  margin-left: 8rpx;
+}
+.scoresbox>button {
+  margin: 0;
+  width: 200rpx;
+  height: 58rpx;
+  line-height: 57rpx;
+  color: #fff;
+  font-size: 26rpx;
+  background-color: #29833c;
+  margin-left: 12rpx;
+}
+.hostIcon::after {
+  content: '\e628';
+  color: #fff;
+}
+/* 上面是头部 */
+/* 学生内容 */
+.student image {
+  width: 100%;
+}
+.student view {
+  line-height: 46rpx;
+  text-indent: 60rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.scoresbox>.speedStyle {
+  background-color: #F3F1E3;
+  color: #717171;
+}
+.speedStyle>.hostIcon::after {
+  content: '\e6c6';
+  color: #717171;
+}
+.scoresbox>.succBtn {
+  background-color: #F3F1E3;
+  color: #717171;
+}
+.succIcon::after{
+  content: '\e6c6';
+}

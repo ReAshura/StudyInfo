@@ -2,6 +2,7 @@
 /* 绿色：#29833c */
 page {
   font-size: 28rpx;
+  height: 100%;
 }
 input {
   border: 1rpx solid #818181;
@@ -16,4 +17,19 @@ button::after {
 }
 .placeColor {
   color: #858585;
+}
+/* 暂无数据页面 */
+.nodata {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.nodata>image{
+  width: 50%;
+  margin-top: -220rpx;
+}
+.nodata>view {
+  font-size: 32rpx;
 }
