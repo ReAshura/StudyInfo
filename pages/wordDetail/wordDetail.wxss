@@ -1,5 +1,6 @@
 /* pages/wordDetail/wordDetail.wxss */
 @import '../../utils/iconfont.wxss';
+@import '../../utils/wxParse/wxParse.wxss';
 .contentbox {
   padding: 42rpx 32rpx;
   box-sizing: border-box;
@@ -54,10 +55,11 @@
   width: 100%;
 }
 .student view {
-  line-height: 46rpx;
+  width: 100%;
+  /* line-height: 46rpx;
   text-indent: 60rpx;
   padding-top: 20rpx;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 .scoresbox>.speedStyle {
   background-color: #F3F1E3;

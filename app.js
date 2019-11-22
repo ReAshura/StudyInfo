@@ -7,10 +7,10 @@ App({
   globalData: {
     userType: 2,// 用户状态 2是教师 3是学生 ''是初始状态
     userInfo: {}, // 用户信息
-    URL:'http://xgbxcx.seu.edu.cn/xuegong/api',
-    realmName:'http://xgbxcx.seu.edu.cn',
-    BANNA:'http://xgbxcx.seu.edu.cn/xuegong/crouselimage/',
-    IMGURL:'http://xgbxcx.seu.edu.cn/xuegong/uploads/userphoto/',
+    URL:'https://xgbxcx.seu.edu.cn/xuegong/api',
+    realmName:'https://xgbxcx.seu.edu.cn',
+    BANNA:'https://xgbxcx.seu.edu.cn/xuegong/crouselimage/',
+    IMGURL:'https://xgbxcx.seu.edu.cn/xuegong/uploads/userphoto/',
     userName:'',// 用户账号
     password:'',// 用户密码
   },

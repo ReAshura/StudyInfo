@@ -65,9 +65,9 @@ Page({
   },
   // 视频播放完毕出发
   endVideo() { 
-    wx.showToast({
-      title: '播放完毕啦~',
-    })
+    // wx.showToast({
+    //   title: '播放完毕',
+    // })
   },
   // 开始倒计时
   actionTimeOut(ms){

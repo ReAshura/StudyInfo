@@ -1,4 +1,5 @@
 // pages/wordDetail/wordDetail.js.
+let WxParse = require('../../utils/wxParse/wxParse.js');
 const app = getApp();
 Page({
   data: {
@@ -33,6 +34,7 @@ Page({
       this.setData({
         wordDetail:res.data
       })
+      WxParse.wxParse('article', 'html', res.data.content, this, 5);
     })
   },
   // 获取学生的资料
