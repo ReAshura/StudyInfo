@@ -84,8 +84,12 @@ Page({
           app.wxAjax('/course/updateCourseInfo',data,'POST').then(res=>{
             this.setData({
               popbool: false,
-              currIndex: null
+              currIndex: null,
+              page: 0, // 分页
+              courseList: [],
+              ajaxEnd:false
             })
+
             this.getCourseList();
             let prevPage = getCurrentPages()[getCurrentPages().length - 2];
             if (typeof prevPage.getCourseList === 'function'){

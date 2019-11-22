@@ -12,11 +12,11 @@ wx:else
     </view>
     <view class="inputbox">
       <text class="iconfont serIcon"></text>
-      <input placeholder="请输入您的账号" bindinput="setinput" data-id="username"></input>
+      <input placeholder="请输入您的账号" bindinput="setinput" data-id="username" value="{{username}}"></input>
     </view>
     <view class="inputbox">
       <text class="iconfont passIcon"></text>
-      <input placeholder="请输入您的密码" bindinput="setinput" data-id="password" password="true"></input>
+      <input placeholder="请输入您的密码" bindinput="setinput" data-id="password" password="true" value="{{password}}"></input>
     </view>
     <button bindtap="loginFN">登录</button>
   </view>
