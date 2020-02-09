@@ -1,7 +1,12 @@
 <!--pages/student/course/course.wxml-->
 <search-input bindmyevent="searchFN" />
 <block wx:if="{{courseList.length>0 || !ajaxEnd}}">
-  <course-list bindmyevent="listFN" dataList="{{courseList}}" speed="{{true}}"/>
+  <course-list 
+    bindmyevent="listFN" 
+    dataList="{{courseList}}" 
+    speed="{{true}}" 
+    showNew="{{true}}"
+  />
 </block>
 <block wx:else>
   <view class="nodata">

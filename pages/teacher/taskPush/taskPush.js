@@ -11,6 +11,7 @@ Page({
     isLimit: 0, // 当前获取了多少数据
     page: 0, // 分页
     ajaxEnd: false, // 请求是否完成 ， 只为了UI切换
+    courseType:1, // 课程类型 1学生部 2保卫处
   },
   onLoad: function (options) {
     // 获取课程列表
@@ -29,7 +30,16 @@ Page({
   },
   // 获取课程列表
   getCourseList() {
-    app.wxAjax('/course/courseInfoList', { code: '', name: this.data.searchText, teacherId: app.globalData.userInfo.id, start: this.data.page, limit: this.data.limit }).then(res => {
+    let data =  { 
+      code: '', 
+      name: this.data.searchText, 
+      teacherId: app.globalData.userInfo.id, 
+      courseType: this.data.courseType,
+      isPublished: false,
+      start: this.data.page, 
+      limit: this.data.limit 
+    }
+    app.wxAjax('/course/courseInfoList', data).then(res => {
       this.setData({
         courseList: this.data.courseList.concat(res.dataList),
         isLimit: res.dataList.length,
@@ -37,12 +47,25 @@ Page({
       })
     })
   },
+  // 切换课程类别，1学生处 2保卫处
+  selectTypeFN(e){
+    if (e.target.dataset.id){
+      this.setData({
+        courseType: e.target.dataset.id,
+        page: 0, // 分页
+        ajaxEnd:false,
+        courseList: []
+      })
+      // 获取课程列表
+      this.getCourseList();
+    }
+  },
   // 获取标签列表
   getTagList(){
     let data = {
       teacherId: app.globalData.userInfo.id,
       name:'',
-      start:1,
+      start:0,
       limit:-1
     }
     app.wxAjax('/account/teacherTagList',data).then(res=>{
@@ -70,13 +93,14 @@ Page({
   pushCurse(){
     wx.showModal({
       title: '提示',
-      content: '您确定要发布该课程吗？',
+      content: '您确定要修改该标签的课程吗？',
       success: (res) => {
         let xb = this.data.currIndex
         if (res.confirm && xb !== null) {
           let arr = [];
           this.data.currList.forEach(item => arr.push(item.id))
           let data = {
+            teacherId: app.globalData.userInfo.id, 
             courseId: this.data.courseList[xb].courseId,
             isPublished: true,
             tagIdList: arr.toString()
@@ -126,6 +150,7 @@ Page({
     this.setData({
       searchText: e.detail.text,
       page: 0, // 分页
+      ajaxEnd:false,
       courseList: []
     })
     // 获取课程列表

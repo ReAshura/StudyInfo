@@ -16,7 +16,8 @@
     <block wx:for="{{dataList}}" wx:key="studentId">
       <view class="list_item" catchtap='_itemDetail' data-id='{{item.studentId}}'>
         <view class='item_left'>
-          <image src="{{item.photo?imgSrc+item.photo:'/images/demo.svg'}}"></image>
+          <!-- <image src="{{item.photo?imgSrc+item.photo:'/images/demo.svg'}}"></image> -->
+          <image src="/images/demo.svg"></image>
           <view>{{item.studentName}}</view>
         </view>
         <view class='item_right'>

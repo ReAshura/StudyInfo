@@ -91,7 +91,7 @@
   z-index: -999;
 }
 .speedBox {
-  padding: 40rpx 32rpx;
+  padding: 40rpx 32rpx 6rpx;
   box-sizing: border-box;
 }
 .selectTi {
@@ -290,4 +290,12 @@
   position: fixed;
   top: 9999999rpx;
   left: 0;
+}
+
+
+.nodataList {
+  text-align: center;
+  font-size: 30rpx;
+  margin-bottom: 40rpx;
+  color: #676565;
 }

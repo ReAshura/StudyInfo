@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "course-list": "/components/course-list/course-list",
-    "ec-canvas": "../../../utils/ec-canvas/ec-canvas"
-  }
+    "ec-canvas": "../../../utils/ec-canvas/ec-canvas",
+    "search-input": "/components/search-input/search-input"
+  },
+  "onReachBottomDistance": 50
 }

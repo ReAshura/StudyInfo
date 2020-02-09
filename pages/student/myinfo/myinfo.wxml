@@ -4,11 +4,11 @@
   <view class="myimgbox" wx:if="{{tempFilePath}}" >
     <image src="{{tempFilePath}}" bindtap="setimg"></image>
   </view>
-  <view class="myimgbox" wx:elif="{{prevMyInfo.photo}}" >
+  <!-- <view class="myimgbox" wx:elif="{{prevMyInfo.photo}}" >
     <image  src="{{network+prevMyInfo.photo}}" bindtap="setimg"></image>
-  </view>
-  <view class="myimgbox" wx:else >
-    <image  src="/images/demo.svg" bindtap="setimg"></image>
+  </view> wx:else -->
+  <view class="myimgbox">
+    <image  src="/images/demo.svg"></image>
   </view>
 </view>
 

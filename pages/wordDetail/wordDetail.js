@@ -69,6 +69,7 @@ Page({
   // 结束倒计时
   endTimeOut(){
     let data = {
+      // teacherId: app.globalData.userInfo.id,
       userId: app.globalData.userInfo.id,
       resourceId: this.data.resourceId,
       status: 3

@@ -37,8 +37,8 @@ Page({
       gender: this.data.gender[this.data.genderxb],
       trueName: this.data.prevMyInfo.trueName
     }
-    if (this.data.tempFilePath === ''){
-      data.photo = this.data.prevMyInfo.photo
+    // if (this.data.tempFilePath === ''){
+      // data.photo = this.data.prevMyInfo.photo
       app.wxAjax('/account/updateUser',data,'POST').then(res=>{
         if (res.result){
           setTimeout((res) => {
@@ -55,31 +55,31 @@ Page({
           app.wxAlert(res.message)
         }
       })
-    }else{
-      wx.uploadFile({
-        url: app.globalData.URL +'/account/updateUser',
-        filePath: this.data.tempFilePath,
-        name: 'file',
-        formData: data,
-        success(res) {
-          res = JSON.parse(res.data)
-          if (res.result) {
-            setTimeout(() => {
-              wx.navigateBack({
-                delta: 1
-              })
-            },1500)
-            wx.showToast({
-              title: '保存成功...',
-              mask: true,
-              duration: 1500
-            })
-          } else {
-            app.wxAlert(res.message)
-          }
-        }
-      })
-    }
+    // }else{
+    //   wx.uploadFile({
+    //     url: app.globalData.URL +'/account/updateUser',
+    //     filePath: this.data.tempFilePath,
+    //     name: 'file',
+    //     formData: data,
+    //     success(res) {
+    //       res = JSON.parse(res.data)
+    //       if (res.result) {
+    //         setTimeout(() => {
+    //           wx.navigateBack({
+    //             delta: 1
+    //           })
+    //         },1500)
+    //         wx.showToast({
+    //           title: '保存成功...',
+    //           mask: true,
+    //           duration: 1500
+    //         })
+    //       } else {
+    //         app.wxAlert(res.message)
+    //       }
+    //     }
+    //   })
+    // }
   },
   // 性别选择器change事件
   genderFN(e){

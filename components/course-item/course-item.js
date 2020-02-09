@@ -24,7 +24,11 @@ Component({
     studentType: {
       type: Boolean,
       value: false
-    }
+    },
+    searchPeople: {
+      type: Boolean,
+      value: false
+    },
   },
 
   /**
@@ -38,12 +42,27 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 跳转页面
+    _navigatPageFN(e){
+      let data = e.currentTarget.dataset
+      if (data.url && data.id){
+        wx.navigateTo({
+          url: data.url + '?resourceId=' + data.id,
+        })
+      }
+    },
     // 点击查看全部
     _lookAll(){
       let myEventDetail = {
         'type': 0
       }
       this.triggerEvent('myevent', myEventDetail)
+    },
+    // 查看完成人数
+    _searchPeople(e) {
+      wx.navigateTo({
+        url: '/pages/teacher/completeNumber/completeNumber?resourceId=' + e.currentTarget.dataset.id
+      })
     }
   }
 })

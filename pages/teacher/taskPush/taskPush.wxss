@@ -10,7 +10,22 @@
   left: 0;
   overflow: hidden;
 }
-
+.courseType {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.courseType>view {
+  width: 100%;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.activeType {
+  background-color: #bfe8ff;
+}
 .popbox {
   width: 90%;
   padding: 30rpx 20rpx;

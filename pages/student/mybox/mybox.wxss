@@ -2,8 +2,10 @@
 @import '../../../utils/iconfont.wxss';
 .myheadbox {
   background-color: #fcf6cd;
-  padding: 42rpx 52rpx;
+  padding: 42rpx 52rpx 10rpx;
   box-sizing: border-box;
+}
+.myheadbox>.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +22,19 @@
 }
 .myimgbox>view{
   margin-left: 42rpx;
+}
+.tagListBox {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+}
+.tagListBox>view {
+  padding: 8rpx 22rpx;
+  border: 1rpx solid #cfcfcf;
+  margin: 0 26rpx 20rpx 0;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  border-radius: 8rpx;
 }
 .myxuehao {
   font-size: 28rpx;

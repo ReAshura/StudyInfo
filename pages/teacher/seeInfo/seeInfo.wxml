@@ -1,7 +1,8 @@
 <!--pages/teacher/seeInfo/seeInfo.wxml-->
 <view class="myheadbox">
   <view class="myimgbox">
-    <image src="{{studentInfo.photo?imgSrc+studentInfo.photo:'/images/demo.svg'}}"></image>
+    <!-- <image src="{{studentInfo.photo?imgSrc+studentInfo.photo:'/images/demo.svg'}}"></image> -->
+    <image src="/images/demo.svg"></image>
     <view>{{studentInfo.trueName}}</view>
   </view>
   <view class="myxuehao">学号:{{studentInfo.userName}}</view>
@@ -29,16 +30,27 @@
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}" class="{{popbool?'moveOut':''}}"/>
 </view>
 
+<search-input bindmyevent="searchFN" title="请输入要查找的课程名" />
 <view class='speedBox'>
   <view class='selectTi'>
     <view class="{{type===3?'activ':''}}" data-id='{{3}}' bindtap='tasktypeFN'>已完成任务</view>
-    <view class="{{type===1?'activ':''}}" data-id='{{1}}' bindtap='tasktypeFN'>未完成任务</view>
+    <view class="{{type===2?'activ':''}}" data-id='{{2}}' bindtap='tasktypeFN'>未完成任务</view>
   </view>
 </view>
 
-<view class="list_cont">
-  <course-list bindmyevent="courseEvent" dataList="{{courseList}}"/>
-</view>
+
+<block  wx:if="{{courseList.length <= 0 && ajaxEnd}}">
+  <view class="nodataList">
+    暂无课程
+  </view>
+</block>
+<block wx:else>
+  <view class="list_cont">
+    <course-list bindmyevent="courseEvent" dataList="{{courseList}}"/>
+  </view>
+</block>
+
+
 
 <view class='popup' wx:if="{{popbool}}" bindtap='closepop'>
   <view class='popbox' catchtap='stopclose'>

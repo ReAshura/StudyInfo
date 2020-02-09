@@ -49,6 +49,7 @@ Page({
   endTimeOut() {
     if (this.data.userType == 3 && this.data.studentType.data.status!=3){
       let data = {
+        // teacherId: app.globalData.userInfo.id,
         userId: app.globalData.userInfo.id,
         resourceId: this.data.resourceId,
         status: 3

@@ -1,11 +1,18 @@
 <!--pages/student/mybox/mybox.wxml-->
 <view class="myheadbox">
-  <view class="myimgbox">
-    <image wx:if="{{myInfo.photo}}" src="{{network+myInfo.photo}}"></image>
-    <image wx:else src="/images/demo.svg"></image>
-    <view>{{myInfo.trueName}}</view>
+  <view class="top">
+    <view class="myimgbox">
+      <!--<image wx:if="{{myInfo.photo}}" src="{{network+myInfo.photo}}"></image>wx:else-->
+      <image src="/images/demo.svg"></image>
+      <view>{{myInfo.trueName}}</view>
+    </view>
+    <view class="myxuehao">学号:{{myInfo.userName}}</view>
   </view>
-  <view class="myxuehao">学号:{{myInfo.userName}}</view>
+  <view class="tagListBox">
+    <block wx:for="{{myInfo.tagList}}" wx:key="id">
+      <view>{{item.name}}</view>
+    </block>
+  </view>
 </view>
 
 <view class="integralbox">

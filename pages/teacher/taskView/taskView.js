@@ -8,6 +8,7 @@ Page({
     isLimit: 0, // 当前获取了多少数据
     page: 0, // 分页
     ajaxEnd: false, // 请求是否完成 ， 只为了UI切换
+    courseType: 1, // 课程类型 1学生部 2保卫处
   },
   onLoad: function (options) {
     // 获取课程列表
@@ -24,7 +25,17 @@ Page({
   },
   // 获取课程列表
   getCourseList() {
-    app.wxAjax('/course/courseInfoList', { code: '', name: this.data.searchText, teacherId: app.globalData.userInfo.id, start: this.data.page, limit: this.data.limit }).then(res => {
+    let data = { 
+      code: '', 
+      name: this.data.searchText, 
+      teacherId: app.globalData.userInfo.id, 
+      start: this.data.page, 
+      courseType: this.data.courseType,
+      isPublished: true,
+      limit: this.data.limit 
+    }
+    
+    app.wxAjax('/course/courseInfoList', data).then(res => {
       console.log(res)
       this.setData({
         courseList: this.data.courseList.concat(res.dataList),
@@ -42,11 +53,25 @@ Page({
       })
     }
   },
+  // 切换课程类别，1学生处 2保卫处
+  selectTypeFN(e) {
+    if (e.target.dataset.id) {
+      this.setData({
+        courseType: e.target.dataset.id,
+        ajaxEnd:false,
+        page: 0, // 分页
+        courseList: []
+      })
+      // 获取课程列表
+      this.getCourseList();
+    }
+  },
   // 监听到点击搜索按钮
   searchFN(e) {
     this.setData({
       searchText: e.detail.text,
       page: 0, // 分页
+      ajaxEnd:false,
       courseList:[]
     })
     // 获取课程列表

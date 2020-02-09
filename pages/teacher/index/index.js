@@ -17,7 +17,16 @@ Page({
   },
   // 获取课程列表
   getCourseList(){
-    app.wxAjax('/course/courseInfoList', { code: '', name: '', teacherId: app.globalData.userInfo.id, start: 1, limit:3}).then(res=>{
+    let data = { 
+      code: '', 
+      name: '', 
+      teacherId: app.globalData.userInfo.id, 
+      courseType: '',
+      isPublished: true,
+      start: 0, 
+      limit: 3 
+    }
+    app.wxAjax('/course/courseInfoList', data).then(res=>{
       this.setData({
         courseList: res.dataList
       })
@@ -27,7 +36,7 @@ Page({
   getLatelyStudent(){
     let data = {
       teacherId: app.globalData.userInfo.id,
-      start:1,
+      start:0,
       limit:3
     }
     app.wxAjax('/learning/studentPointList',data).then(res=>{

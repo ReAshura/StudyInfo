@@ -1,0 +1,72 @@
+<image src="{{imgSrc+wordDetail.thumbImage}}" wx:if="{{wordDetail.thumbImage}}" class="bannerImg" mode="widthFix"></image>
+<view class="contentbox">
+  <view class="title">{{wordDetail.name}}</view>
+  <view class="timebox">{{wordDetail.createDate}} 布置</view>
+  <view class="scoresbox">
+    <view class="score_left">
+      <image src="/images/money.svg"></image>
+      <text>{{wordDetail.point}} 分</text>
+    </view>
+    <button  wx:if="{{userType == 3}}" class="{{studentType.data.status == 3?'succBtn':''}}"> 
+      <block wx:if="{{studentType.data.status == 3}}">
+        <text class="iconfont succIcon"></text> 已完成
+      </block>
+      <block wx:else>
+        <text class="iconfont hostIcon"></text> 未完成
+      </block>
+    </button>
+    <button wx:elif="{{userType == 2}}" class='speedStyle'> 
+      <text class="iconfont hostIcon"></text>
+      {{wordDetail.finishedCount}}人完成
+    </button>
+  </view>
+</view>
+
+
+<view class="select_box">
+  <view class="tagBox">
+    <view 
+      class="{{tagId===''?'tagactive':''}}"
+      data-id="" 
+      bindtap="searchTag"
+    ><text class="iconfont yj"></text>查看所有用户</view>
+    <block wx:for="{{mokeList}}" wx:key="id">
+      <view 
+        class="{{tagId===item.id?'tagactive':''}}" 
+        data-id="{{item.id}}" 
+        bindtap="searchTag"
+      ><text class="iconfont tagicon"></text>{{item.name}}</view>
+    </block>
+  </view>
+  <view class="heade_sel" bindtap="selectFinished">
+    <view class="{{isFinished?'active_sel':''}}" data-bool="{{true}}">已完成任务</view>
+    <view class="{{isFinished?'':'active_sel'}}" data-bool="{{false}}">未完成任务</view>
+  </view>
+</view>
+
+<view class='header'>
+  <view class='t1'>学生姓名</view>
+  <view class='t2'>当前积分</view>
+</view>
+
+<view class='studentList'>
+  <block wx:for="{{studentList}}" wx:key="id">
+    <navigator 
+      class="s_item" 
+      url='../seeInfo/seeInfo?id={{item.id}}'
+    >
+      <view class='item_info t1'>
+        <!-- <image src="{{item.photo?headSrc+item.photo:'/images/demo.svg'}}"></image> -->
+        <image src="/images/demo.svg"></image>
+        <view>{{item.trueName}}</view>
+      </view>
+      <view class='t2'>
+        <text>{{item.totalPoint}}</text>
+      </view>
+      <!-- <view class='t2'>
+        <text>{{item.finishedCount}}</text>
+      </view> -->
+      <text class='iconfont runIcons'></text>
+    </navigator>
+  </block>
+</view>
