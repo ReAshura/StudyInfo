@@ -20,7 +20,8 @@
     "pages/courseList/courseList",
     "pages/teacher/taskDetail/taskDetail",
     "pages/student/courseDone/courseDone",
-    "pages/webDetail/webDetail"
+    "pages/webDetail/webDetail",
+    "pages/teacher/completeNumber/completeNumber"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,26 +33,22 @@
     "color": "#8b8b8b",
     "selectedColor": "#29833c",
     "backgroundColor": "#fff",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/student/index/index",
         "text": "首页",
         "iconPath": "images/blur_index.png",
         "selectedIconPath": "images/focus_index.png"
-      },
-      {
+      },{
         "pagePath": "pages/student/course/course",
         "text": "课程列表",
         "iconPath": "images/blur_font.png",
         "selectedIconPath": "images/focus_font.png"
-      },
-      {
+      },{
         "pagePath": "pages/student/mybox/mybox",
         "text": "我的",
         "iconPath": "images/blur_me.png",
         "selectedIconPath": "images/focus_me.png"
-      }
-    ]
+      }]
   },
   "sitemapLocation": "sitemap4.json"
 }

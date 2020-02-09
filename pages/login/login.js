@@ -4,11 +4,20 @@ Page({
   mixins:[require('../../Mixins.js')],
   data: {
     type: 1, // 1代表学生,0代表老师
-    username:'001', // 输入的账号
-    password:'123', // 输入的密码
+    username:'', // 输入的账号
+    password:'', // 输入的密码
   },
   onLoad: function (options) {
-    
+    if (wx.getStorageSync('username')) {
+      this.setData({
+        username: wx.getStorageSync('username')
+      })
+    };
+    if (wx.getStorageSync('password')) {
+      this.setData({
+        password: wx.getStorageSync('password')
+      })
+    }
   },
   //登录判断
   loginFN(){
@@ -31,6 +40,8 @@ Page({
       };
       app.globalData.userType = res.data.userType;
       app.globalData.userInfo = res.data;
+      wx.setStorageSync('username', this.data.username);
+      wx.setStorageSync('password', this.data.password);
       app.globalData.userName = this.data.username;
       app.globalData.password = this.data.password;
     })

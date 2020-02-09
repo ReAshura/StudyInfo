@@ -1,7 +1,8 @@
 <!--pages/teacher/index/index.wxml-->
 <view class='header'>
   <view class='head_left'>
-    <image src= "{{userInfo.photo?imgSrc+userInfo.photo:'/images/banner.png'}}"></image>
+    <!-- <image src= "{{userInfo.photo?imgSrc+userInfo.photo:'/images/banner.png'}}"></image> -->
+    <image src= "/images/demo.svg"></image>
     <view>{{userInfo.trueName}}</view>
     <text>老师</text>
   </view>
@@ -13,13 +14,13 @@
     <view class='item_blue'>
       <text class='iconfont'></text>
     </view>
-    <text>发布课程</text>
+    <text>修改课程</text>
   </navigator>
   <navigator url="../taskView/taskView" class='nav_item'>
     <view class='item_green'>
       <text class='iconfont'></text>
     </view>
-    <text>查看课程</text>
+    <text>课程列表</text>
   </navigator>
   <navigator url="../myStudent/myStudent" class='nav_item'>
     <view class='item_orange'>
@@ -31,8 +32,10 @@
 
 <view class="line"></view>
 
-<course-list bind:myevent="monitorFN" searchBtn="{{true}}" titleText="最近发布的课程"  titleShow="{{true}}" runAllList="{{true}}" tag="{{true}}" dataList="{{courseList}}"></course-list>
+<block wx:if="{{courseList.length > 0}}">
+  <course-list bind:myevent="monitorFN" titleText="最近发布的课程"  titleShow="{{true}}" runAllList="{{true}}" searchBtn="{{true}}" dataList="{{courseList}}"/>
+</block>
 
-<view class="line"></view>
+<view class="line" wx:if="{{latelyStudent.length > 0}}"></view>
 <!-- latelyStudent -->
-<done-student titleShow="{{true}}" bindmyevent="studentEvent" dataList="{{latelyStudent}}" />
+<done-student titleShow="{{true}}" bindmyevent="studentEvent" dataList="{{latelyStudent}}"  wx:if="{{latelyStudent.length > 0}}"/>

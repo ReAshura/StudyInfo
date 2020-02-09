@@ -1,7 +1,11 @@
 <!--pages/teacher/taskView/taskView.wxml-->
 <search-input bindmyevent="searchFN"/>
+<view class="courseType" bindtap="selectTypeFN">
+  <view class="{{courseType===1?'activeType':''}}" data-id="{{1}}">学生处</view>
+  <view class="{{courseType===2?'activeType':''}}" data-id="{{2}}">保卫处</view>
+</view>
 <block wx:if="{{courseList.length>0 || !ajaxEnd}}">
-  <course-list searchBtn="{{true}}" tag="{{true}}"  bind:myevent="monitorFN"  dataList="{{courseList}}" />
+  <course-list searchBtn="{{true}}"  bind:myevent="monitorFN"  dataList="{{courseList}}"  />
 </block>
 <block wx:else>
   <view class="nodata">

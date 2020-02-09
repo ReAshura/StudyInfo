@@ -7,10 +7,10 @@
   interval="{{3000}}"
   class="bannerbox">
   <block wx:for="{{bannerList}}" wx:key="id">
-    <swiper-item>
-      <view>
+    <swiper-item wx:if="{{item.courseId}}">
+      <navigator url="/pages/courseList/courseList?courseId={{item.courseId}}">
         <image src="{{network}}{{item.url}}"></image>
-      </view>
+      </navigator>
     </swiper-item>
   </block>
 </swiper>

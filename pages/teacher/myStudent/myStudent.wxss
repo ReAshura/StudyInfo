@@ -59,3 +59,34 @@
   font-size: 24rpx;
 }
 /* 学生列表结束 */
+
+.tagListBox>.title {
+  text-align: center;
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+.tagListBox>.box {
+  display: flex;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tagListBox>.box>view {
+  margin-bottom: 22rpx;
+  padding: 8rpx 22rpx;
+  font-size: 30rpx;
+  margin-right: 22rpx;
+  border: 1rpx solid #cfcfcf;
+  border-radius: 8rpx;
+}
+.tagListBox>.box>.active {
+  background-color: #cfcfcf;
+  color: #fff;
+}
+.nodata2 {
+  text-align: center;
+  color: #cfcfcf;
+  margin-top: 22rpx;
+  font-size: 30rpx;
+}

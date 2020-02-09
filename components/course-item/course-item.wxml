@@ -3,7 +3,7 @@
 
   <view class="list_cont">
     <block wx:for="{{dataList}}" wx:key="id">
-      <navigator class="list_item crearcolumn" url="/pages/wordDetail/wordDetail?resourceId={{item.id}}" wx:if="{{item.resourceType == 2}}">
+      <view class="list_item crearcolumn" data-url="/pages/wordDetail/wordDetail" wx:if="{{item.resourceType == 2}}" catchtap="_navigatPageFN" data-id="{{item.id}}">
         <view class="wordtitle">{{item.name}}</view>
         <view class="word_bottom">
           <view class="item_time">{{item.createDate}} 布置</view>
@@ -30,13 +30,18 @@
           <button wx:elif="{{pushBtn}}"> 
             发布
           </button>
+          <block wx:elif="{{searchPeople}}">
+            <button class='speedStyle' catchtap="_searchPeople" data-id='{{item.id}}'> 
+              <text class="iconfont hostIcon"></text> {{item.finishedCount}}人完成
+            </button>
+          </block>
           <block wx:else>
             
           </block>
         </view>
-      </navigator>
+      </view>
 
-      <navigator class="list_item" url="/pages/videoDetail/videoDetail?resourceId={{item.id}}" wx:elif="{{item.resourceType==1}}">
+      <view class="list_item" data-url="/pages/videoDetail/videoDetail" wx:elif="{{item.resourceType==1}}" catchtap="_navigatPageFN" data-id="{{item.id}}">
         <image src="{{item.thumbImage?imgUrl+item.thumbImage:'/images/banner.png'}}" ></image>
         <view class="listright">
           <view class="item_title">{{item.name}}</view>
@@ -65,14 +70,19 @@
             <block wx:elif="{{pushBtn}}">
               <button>  发布 </button>
             </block>
+            <block wx:elif="{{searchPeople}}">
+              <button class='speedStyle' catchtap="_searchPeople" data-id='{{item.id}}'> 
+                <text class="iconfont hostIcon"></text> {{item.finishedCount}}人完成
+              </button>
+            </block>
             <block wx:else>
-              <button></button>
+              
             </block>
           </view>
         </view>
-      </navigator>
+      </view>
 
-      <navigator class="list_item crearcolumn" url="/pages/webDetail/webDetail?resourceId={{item.id}}" wx:elif="{{item.resourceType == 3}}">
+      <view class="list_item crearcolumn" data-url="/pages/webDetail/webDetail" wx:elif="{{item.resourceType == 3}}" catchtap="_navigatPageFN" data-id="{{item.id}}">
         <view class="wordtitle">{{item.name}}</view>
         <view class="word_bottom">
           <view class="item_time">{{item.createDate}} 布置</view>
@@ -99,11 +109,16 @@
           <button wx:elif="{{pushBtn}}"> 
             发布
           </button>
+          <block wx:elif="{{searchPeople}}">
+            <button class='speedStyle' catchtap="_searchPeople" data-id='{{item.id}}'> 
+              <text class="iconfont hostIcon"></text> {{item.finishedCount}}人完成
+            </button>
+          </block>
           <block wx:else>
             
           </block>
         </view>
-      </navigator>
+      </view>
       
     </block>
 

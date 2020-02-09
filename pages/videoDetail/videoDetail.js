@@ -15,7 +15,8 @@ Page({
     videoSrc: app.globalData.realmName + '/xuegong/uploads/resourcefile/',
     imgSrc: app.globalData.realmName + '/xuegong/uploads/thumbimage/',
     currSrc:'', // 当前视频
-    autoplay:false, // 是否自动播放
+    currIndex: 0,// 当前食品下标
+    autoplay:true, // 是否自动播放
   },
   onLoad: function (options) {
     this.setData({
@@ -65,9 +66,9 @@ Page({
   },
   // 视频播放完毕出发
   endVideo() { 
-    wx.showToast({
-      title: '播放完毕啦~',
-    })
+    // wx.showToast({
+    //   title: '播放完毕',
+    // })
   },
   // 开始倒计时
   actionTimeOut(ms){
@@ -96,6 +97,7 @@ Page({
   // 结束倒计时
   endTimeOut() {
     let data = {
+      // teacherId: app.globalData.userInfo.id,
       userId: app.globalData.userInfo.id,
       resourceId: this.data.resourceId,
       status: 3
@@ -125,10 +127,18 @@ Page({
   },
   // 点击观看
   watchFN(e){
-    this.setData({
-      currSrc: this.data.videoSrc + e.currentTarget.dataset.src,
-      autoplay:true
-    })
+    let xb = e.currentTarget.dataset.xb;
+    if (this.data.videoDetail.videoList[xb].filePath){
+      wx.createVideoContext('videoBox').seek(0);
+      this.setData({
+        // currSrc: this.data.videoSrc + e.currentTarget.dataset.src,
+        currIndex: e.currentTarget.dataset.xb,
+        autoplay: true
+      })
+      // wx.createVideoContext('videoBox').play();
+    }else {
+      app.wxAlert('课程信息出错')
+    }
   },
   onReady: function () {
     this.setData({

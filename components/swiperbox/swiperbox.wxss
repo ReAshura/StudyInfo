@@ -2,7 +2,8 @@
 swiper {
   height: 200px;
 }
-.bannerbox view{
+.bannerbox navigator{
+  display: block;
   height: 100%;
 }
 .bannerbox image {

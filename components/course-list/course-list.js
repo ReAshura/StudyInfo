@@ -43,6 +43,11 @@ Component({
     speed:{
       type: Boolean,
       value: false
+    },
+    // 是否显示 新增数据
+    showNew: {
+      type: Boolean,
+      value: false
     }
   },
 
@@ -67,7 +72,16 @@ Component({
     // 点击列表的item
     _itemDetail(e){
       let myEventDetail = {
-        'type': 1, //0查看全部 1 点击列表
+        'type': 1, //0查看全部 1 点击列表  3查看完成人数
+        'id': e.currentTarget.dataset.id,
+        'index': e.currentTarget.dataset.index
+      }
+      this.triggerEvent('myevent', myEventDetail)
+    },
+    // 查看完成人数
+    _searchPeople(){
+      let myEventDetail = {
+        'type': 3, //0查看全部 1 点击列表 3查看完成人数
         'id': e.currentTarget.dataset.id,
         'index': e.currentTarget.dataset.index
       }

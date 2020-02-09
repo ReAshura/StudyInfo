@@ -16,4 +16,4 @@
 
 <view class="line"></view>
 
-<course-list runAllList="{{true}}" titleShow="{{true}}" bindmyevent="listFN" dataList="{{courseList}}" speed="{{true}}" />
+<course-list runAllList="{{true}}" titleShow="{{true}}" bindmyevent="listFN" dataList="{{courseList}}" speed="{{true}}" showNew="{{true}}"/>

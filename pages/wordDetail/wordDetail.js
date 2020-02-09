@@ -1,4 +1,5 @@
 // pages/wordDetail/wordDetail.js.
+let WxParse = require('../../utils/wxParse/wxParse.js');
 const app = getApp();
 Page({
   data: {
@@ -33,6 +34,7 @@ Page({
       this.setData({
         wordDetail:res.data
       })
+      WxParse.wxParse('article', 'html', res.data.content, this, 5);
     })
   },
   // 获取学生的资料
@@ -67,6 +69,7 @@ Page({
   // 结束倒计时
   endTimeOut(){
     let data = {
+      // teacherId: app.globalData.userInfo.id,
       userId: app.globalData.userInfo.id,
       resourceId: this.data.resourceId,
       status: 3

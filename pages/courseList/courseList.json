@@ -2,5 +2,6 @@
   "usingComponents": {
     "course-item": "/components/course-item/course-item",
     "search-input": "/components/search-input/search-input"
-  }
+  },
+  "onReachBottomDistance": 50
 }

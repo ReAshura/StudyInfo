@@ -14,23 +14,27 @@
 
     <block wx:for="{{dataList}}" wx:key="id">
       <view class="list_item" catchtap='_itemDetail' data-id='{{item.courseId}}' data-code="{{item.courseCode}}" data-index="{{index}}">
+        <view wx:if="{{showNew && item.resourceCount-item.oldNum}}" class="tipsNum">{{item.resourceCount-item.oldNum}}</view>
          <view class='topbox'>
           <image src="{{item.courseThumbImage?imgSrc+item.courseThumbImage:'/images/banner.png'}}"></image>
           <view class="listright">
             <view class="item_title">{{item.courseName}}</view>
-            <view class="item_time">{{item.coursePublishedDate}} 布置</view>
+            <view class="item_time" wx:if="{{item.coursePublishedDate}}">{{item.coursePublishedDate}} 布置</view>
             <view class="item_icon">
               <view class="item_icon_left">
                 <image src="/images/money.svg"></image>
                 <text>{{item.point}} 分</text>
               </view>
-
-              <button wx:if="{{searchBtn}}" class='speedStyle'> 
-                {{item.isPublished?item.finishedStudentCount+'人完成':'未发布'}}
-              </button>
-              <block wx:elif="{{pushBtn}}">
-                <button wx:if="{{item.isPublished}}"  class='speedStyle'><text class="iconfont hostIcon"></text> {{item.finishedStudentCount}}人完成</button>
+              
+              <block  wx:if="{{searchBtn}}">
+              <!--catchlongtap="_searchPeople" data-id='{{item.courseId}}' data-index="{{index}}"-->    
+                <button wx:if="{{item.isPublished}}"  class='speedStyle'> {{item.finishedStudentCount}} / {{item.unFinishedStudentCount}}</button>
                 <button wx:else>发布</button>
+              </block>
+              <block wx:elif="{{pushBtn}}">
+                <!-- <text class="iconfont hostIcon"></text> {{item.finishedStudentCount}}人完成 -->  
+                <button wx:if="{{item.isPublished}}">修改</button>
+                <button wx:else>未发布</button>
               </block>
               <button wx:elif="{{speed}}" class='speedStyle'> 
                 <text>{{item.finishedCount}}</text> / <text>{{item.resourceCount}}</text>

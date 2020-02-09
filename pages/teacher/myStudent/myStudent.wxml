@@ -1,16 +1,33 @@
 <!--pages/teacher/myStudent/myStudent.wxml-->
 <search-input bindmyevent="searchFN" title="请输入要查找的学生姓名"/>
+
+<view class="tagListBox">
+  <view class="title">搜索指定标签的学生</view>
+  <view class="box">
+    <block wx:for="{{mokeList}}" wx:key="id">
+      <view 
+        class="{{activTag === item.id?'active':''}}" 
+        data-id="{{item.id}}"
+        bindtap="selectTag"
+      >{{item.name}}</view>
+    </block>
+  </view>
+</view>
+
 <view class='header'>
   <view class='t1'>学生姓名</view>
   <view class='t2'>当前积分</view>
   <view class='t2'>任务完成率</view>
 </view>
-
-<view class='studentList'>
+<block wx:if="{{studentList.length <= 0 && ajaxEnd}}">
+  <view class="nodata2">暂无数据</view>
+</block>
+<view class='studentList' wx:else>
   <block wx:for="{{studentList}}" wx:key="id">
     <navigator class='s_item' url='../seeInfo/seeInfo?id={{item.id}}'>
       <view class='item_info t1'>
-        <image src="{{item.photo?imgSrc+item.photo:'/images/demo.svg'}}"></image>
+        <!-- <image src="{{item.photo?imgSrc+item.photo:'/images/demo.svg'}}"></image> -->
+        <image src="/images/demo.svg"></image>
         <view>{{item.trueName}}</view>
       </view>
       <view class='t2'>

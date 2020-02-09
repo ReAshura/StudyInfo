@@ -13,7 +13,7 @@ Page({
     let data = {
       courseId:'',
       studentId: app.globalData.userInfo.id,
-      start:1,
+      start:0,
       limit:-1
     }
     app.wxAjax('/learning/studentPointList', data).then(res=>{

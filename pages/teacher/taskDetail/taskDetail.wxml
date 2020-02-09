@@ -1,6 +1,6 @@
 <search-input title="请输入要查找的教材" bindmyevent="searchFN"/>
 <block wx:if="{{dataList.length>0 || !ajaxEnd}}">
-  <course-item searchBtn="{{true}}" dataList="{{dataList}}"/>
+  <course-item searchPeople="{{true}}" dataList="{{dataList}}"/>
 </block>
 <block wx:else>
   <view class="nodata">

@@ -4,13 +4,13 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
 		"coverView": true,
+		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -21,7 +21,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.8.0",
+	"libVersion": "2.9.2",
 	"appid": "wxba669c7320a93348",
 	"projectname": "StudyInfo",
 	"debugOptions": {
@@ -47,8 +47,12 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 14,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -152,6 +156,21 @@
 					"id": -1,
 					"name": "老师 发布任务",
 					"pathName": "pages/teacher/taskPush/taskPush",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查看资源详情",
+					"pathName": "pages/teacher/completeNumber/completeNumber",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "【老师】 查看人数",
+					"pathName": "pages/teacher/completeNumber/completeNumber",
+					"query": "resourceId=ff8080816e7e4e6a016e81a63d800029",
 					"scene": null
 				}
 			]

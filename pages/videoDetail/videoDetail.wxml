@@ -1,8 +1,9 @@
 <!--pages/videoDetail/videoDetail.wxml-->
 <!-- https://www.ttnav.com/storage/topimg/20190824/oapVFsIiZnax0I61kk28Be7ux3taXGur1pk5K7Kc.mp4 -->
 <video
- src="{{currSrc}}"
- muted="{{true}}"
+ wx:if="{{videoDetail.videoList[currIndex].filePath}}" 
+ id="videoBox"
+ src="{{videoSrc+videoDetail.videoList[currIndex].filePath}}"
  bindended="endVideo"
  autoplay="{{autoplay}}"
  poster="{{videoDetail.thumbImage?imgSrc+videoDetail.thumbImage:''}}"
@@ -34,7 +35,7 @@
         <text class="iconfont play"></text>
         <view>{{item.name}}</view>
       </view>
-      <button class="playbtn" data-src="{{item.filePath}}" bindtap="watchFN">观看</button>
+      <button class="playbtn" data-xb="{{index}}" bindtap="watchFN">观看</button>
     </view>
   </block>
 
